@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="lv">
 <head>
 <meta charset="UTF-8">
@@ -227,22 +227,6 @@ nav a:hover{color:var(--gold)}
   margin:0 auto 28px;
 }
 
-.custom-options{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:18px;
-  margin:30px 0;
-}
-
-.custom-card{
-  border:1px solid rgba(212,175,55,.5);
-  padding:24px;
-  background:linear-gradient(160deg,rgba(212,175,55,.12),rgba(0,0,0,.9));
-}
-
-.custom-card h3{color:var(--gold);margin-top:0}
-.custom-card strong{font-size:24px;color:var(--gold)}
-
 .custom-design-area{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -251,9 +235,7 @@ nav a:hover{color:var(--gold)}
   margin-top:35px;
 }
 
-.custom-preview-card{
-  text-align:center;
-}
+.custom-preview-card{text-align:center}
 
 .custom-deck-preview{
   width:210px;
@@ -293,22 +275,9 @@ nav a:hover{color:var(--gold)}
   margin-top:14px;
 }
 
-.custom-controls{
-  text-align:left;
-}
-
-.custom-controls h3{
-  color:var(--gold);
-  font-size:28px;
-  margin-bottom:8px;
-}
-
-.custom-controls strong{
-  display:block;
-  color:var(--gold);
-  font-size:32px;
-  margin-bottom:22px;
-}
+.custom-controls{text-align:left}
+.custom-controls h3{color:var(--gold);font-size:28px;margin-bottom:8px}
+.custom-controls strong{display:block;color:var(--gold);font-size:32px;margin-bottom:22px}
 
 .upload-label{
   display:inline-block;
@@ -322,9 +291,7 @@ nav a:hover{color:var(--gold)}
   font-family:'Cinzel',serif;
 }
 
-#customUpload{
-  display:none;
-}
+#customUpload{display:none}
 
 #customIdea{
   width:100%;
@@ -417,9 +384,7 @@ nav a:hover{color:var(--gold)}
   text-transform:uppercase;
 }
 
-.buy-btn:hover{
-  filter:brightness(1.15);
-}
+.buy-btn:hover{filter:brightness(1.15)}
 
 .part-note{
   min-height:42px;
@@ -439,7 +404,6 @@ nav a:hover{color:var(--gold)}
   text-transform:uppercase;
 }
 
-
 .shop-delete-btn{
   width:100%;
   margin-top:10px;
@@ -453,9 +417,8 @@ nav a:hover{color:var(--gold)}
   font-family:'Cinzel',serif;
 }
 
-.shop-delete-btn:hover{
-  background:#6b0000;
-}
+.shop-delete-btn:hover{background:#6b0000}
+
 .modal{
   display:none;
   position:fixed;
@@ -475,7 +438,6 @@ nav a:hover{color:var(--gold)}
   box-shadow:0 0 35px rgba(212,175,55,.8)
 }
 .close{position:absolute;top:25px;right:35px;font-size:42px;cursor:pointer}
-
 
 .contact-section{
   padding:80px 7%;
@@ -546,15 +508,9 @@ nav a:hover{color:var(--gold)}
   font-family:'Cinzel',serif;
 }
 
-.contact-link:hover{
-  background:var(--gold);
-  color:#050505;
-}
+.contact-link:hover{background:var(--gold);color:#050505}
 
-.contact-form{
-  display:grid;
-  gap:14px;
-}
+.contact-form{display:grid;gap:14px}
 
 .contact-form input,
 .contact-form textarea{
@@ -566,25 +522,86 @@ nav a:hover{color:var(--gold)}
   font-family:'Inter',Arial,sans-serif;
 }
 
-.contact-form textarea{
-  min-height:135px;
-  resize:vertical;
+.contact-form textarea{min-height:135px;resize:vertical}
+
+.contact-form button{width:100%}
+
+.parts-section{
+  padding:80px 7%;
+  background:
+    radial-gradient(circle at top,rgba(212,175,55,.10),transparent 42%),
+    linear-gradient(180deg,#060606,#020202);
+  border-top:1px solid rgba(212,175,55,.35);
+  border-bottom:1px solid rgba(212,175,55,.35);
 }
 
-.contact-form button{
+.parts-intro{
+  max-width:850px;
+  margin:0 auto 35px;
+  color:#d6d6d6;
+  text-align:center;
+  font-size:18px;
+  line-height:1.7;
+}
+
+.parts-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:25px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.part-card{
+  background:linear-gradient(160deg,rgba(212,175,55,.12),rgba(0,0,0,.95));
+  border:1px solid rgba(212,175,55,.45);
+  padding:18px;
+  text-align:center;
+  transition:.3s;
+  box-shadow:0 0 24px rgba(212,175,55,.08);
+}
+
+.part-card:hover{
+  transform:translateY(-5px);
+  border-color:var(--gold);
+  box-shadow:0 0 28px rgba(212,175,55,.38);
+}
+
+.part-card img{
   width:100%;
+  height:170px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+  background:#090909;
 }
 
-@media(max-width:900px){
-  .contact-wrap{
-    grid-template-columns:1fr;
-  }
+.part-card h3{
+  color:white;
+  text-transform:uppercase;
+  margin:18px 0 8px;
+}
+
+.part-card p{
+  color:#cfcfcf;
+  font-size:13px;
+  line-height:1.45;
+  min-height:58px;
+}
+
+.part-card .price{
+  font-size:22px;
+  color:var(--gold);
 }
 
 footer{background:#030303;border-top:1px solid #222;padding:45px 7%}
 .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:25px}
 footer h3{color:var(--gold)}
 footer p{color:#bbb;line-height:1.7}
+
+@media(max-width:900px){
+  .contact-wrap{grid-template-columns:1fr}
+}
 
 @media(max-width:800px){
   header{height:auto;padding:20px;flex-direction:column;gap:15px}
@@ -609,6 +626,7 @@ footer p{color:#bbb;line-height:1.7}
     <a href="#featured" data-lv="Izvēlētie" data-en="Featured">Izvēlētie</a>
     <a href="#technology" data-lv="Tehnoloģija" data-en="Technology">Tehnoloģija</a>
     <a href="#custom" data-lv="Custom" data-en="Custom">Custom</a>
+    <a href="#parts" data-lv="Daļas" data-en="Parts">Daļas</a>
     <a href="#shop" data-lv="Veikals" data-en="Shop">Veikals</a>
     <a href="#contact" data-lv="Kontakti" data-en="Contact">Kontakti</a>
   </nav>
@@ -739,6 +757,73 @@ footer p{color:#bbb;line-height:1.7}
   </div>
 </section>
 
+<section class="parts-section" id="parts">
+  <h2 class="section-title" data-lv="Komplektējošās <span>daļas</span>" data-en="Skateboard <span>parts</span>">Komplektējošās <span>daļas</span></h2>
+
+  <p class="parts-intro"
+     data-lv="Šeit var pasūtīt atsevišķas skeita komplektējošās daļas — riteņus, truckus, gultņus, griptape un skrūves. Tās var izmantot gan pilna komplekta salikšanai, gan sava esošā skeita uzlabošanai."
+     data-en="Here you can order separate skateboard parts — wheels, trucks, bearings, griptape and screws. They can be used for building a complete setup or upgrading your current skateboard.">
+     Šeit var pasūtīt atsevišķas skeita komplektējošās daļas — riteņus, truckus, gultņus, griptape un skrūves. Tās var izmantot gan pilna komplekta salikšanai, gan sava esošā skeita uzlabošanai.
+  </p>
+
+  <div class="parts-grid">
+    <div class="part-card">
+      <img src="ASSETS/parts/wheels.png" onclick="openImg(this.src)" alt="Wheels">
+      <h3 data-lv="Riteņi" data-en="Wheels">Riteņi</h3>
+      <p data-lv="Premium riteņi ar unikālu dizainu. Piemēroti pilnam komplektam vai esošā skeita uzlabošanai."
+         data-en="Premium wheels with a unique design. Suitable for a complete setup or upgrading your current skateboard.">
+         Premium riteņi ar unikālu dizainu. Piemēroti pilnam komplektam vai esošā skeita uzlabošanai.
+      </p>
+      <div class="price">€69</div>
+      <button class="buy-btn" onclick="buyDirect(currentLang === 'lv' ? 'Riteņi' : 'Wheels', currentLang === 'lv' ? 'Daļas' : 'Parts', '€69')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
+    </div>
+
+    <div class="part-card">
+      <img src="ASSETS/parts/trucks.png" onclick="openImg(this.src)" alt="Trucks">
+      <h3 data-lv="Trucki" data-en="Trucks">Trucki</h3>
+      <p data-lv="Izturīgi trucki stabilai braukšanai un labākai kontrolei. Piemēroti premium komplektiem."
+         data-en="Durable trucks for stable riding and better control. Suitable for premium setups.">
+         Izturīgi trucki stabilai braukšanai un labākai kontrolei. Piemēroti premium komplektiem.
+      </p>
+      <div class="price">€89</div>
+      <button class="buy-btn" onclick="buyDirect(currentLang === 'lv' ? 'Trucki' : 'Trucks', currentLang === 'lv' ? 'Daļas' : 'Parts', '€89')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
+    </div>
+
+    <div class="part-card">
+      <img src="ASSETS/parts/bearings.png" onclick="openImg(this.src)" alt="Bearings">
+      <h3 data-lv="Gultņi" data-en="Bearings">Gultņi</h3>
+      <p data-lv="Gludi un ātri gultņi labākam ripojumam. Neliela detaļa, kas ļoti ietekmē braukšanu."
+         data-en="Smooth and fast bearings for better rolling. A small part that makes a big difference.">
+         Gludi un ātri gultņi labākam ripojumam. Neliela detaļa, kas ļoti ietekmē braukšanu.
+      </p>
+      <div class="price">€29</div>
+      <button class="buy-btn" onclick="buyDirect(currentLang === 'lv' ? 'Gultņi' : 'Bearings', currentLang === 'lv' ? 'Daļas' : 'Parts', '€29')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
+    </div>
+
+    <div class="part-card">
+      <img src="ASSETS/parts/griptape.png" onclick="openImg(this.src)" alt="Griptape">
+      <h3 data-lv="Griptape" data-en="Griptape">Griptape</h3>
+      <p data-lv="Saķeres pārklājums dēļa augšai. Palīdz kājām turēties stabili uz dēļa."
+         data-en="Grip surface for the top of the deck. Helps your feet stay stable on the board.">
+         Saķeres pārklājums dēļa augšai. Palīdz kājām turēties stabili uz dēļa.
+      </p>
+      <div class="price">€19</div>
+      <button class="buy-btn" onclick="buyDirect('Griptape', currentLang === 'lv' ? 'Daļas' : 'Parts', '€19')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
+    </div>
+
+    <div class="part-card">
+      <img src="ASSETS/parts/screws.png" onclick="openImg(this.src)" alt="Screws">
+      <h3 data-lv="Skrūves" data-en="Screws">Skrūves</h3>
+      <p data-lv="Skrūvju komplekts trucku piestiprināšanai pie dēļa. Nepieciešams pilnai salikšanai."
+         data-en="Screw set for attaching trucks to the deck. Needed for a complete build.">
+         Skrūvju komplekts trucku piestiprināšanai pie dēļa. Nepieciešams pilnai salikšanai.
+      </p>
+      <div class="price">€9</div>
+      <button class="buy-btn" onclick="buyDirect(currentLang === 'lv' ? 'Skrūves' : 'Screws', currentLang === 'lv' ? 'Daļas' : 'Parts', '€9')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
+    </div>
+  </div>
+</section>
+
 <h2 class="section-title" id="shop" data-lv="Visi <span>dēļi</span>" data-en="All <span>decks</span>">Visi <span>dēļi</span></h2>
 
 <div class="filters" id="filters"></div>
@@ -751,7 +836,6 @@ footer p{color:#bbb;line-height:1.7}
   <span class="close">×</span>
   <img id="bigImg">
 </div>
-
 
 <section class="contact-section" id="contact">
   <h2 class="section-title" data-lv="Kontakti <span>un pasūtījumi</span>" data-en="Contact <span>and orders</span>">Kontakti <span>un pasūtījumi</span></h2>
@@ -772,7 +856,7 @@ footer p{color:#bbb;line-height:1.7}
 
       <div class="contact-row">
         <strong>E-mail</strong>
-        <span>globaldecks@gmail.com</span>
+        <span>info@globaldecks.com</span>
       </div>
 
       <div class="contact-row">
@@ -782,7 +866,7 @@ footer p{color:#bbb;line-height:1.7}
 
       <div class="contact-links">
         <a class="contact-link" href="https://wa.me/37129712885" target="_blank">WhatsApp</a>
-        <a class="contact-link" href="mailto:globaldecks@gmail.com">E-mail</a>
+        <a class="contact-link" href="mailto:info@globaldecks.com">E-mail</a>
         <a class="contact-link" href="#custom" data-lv="Custom dizains" data-en="Custom design">Custom dizains</a>
       </div>
     </div>
@@ -811,7 +895,7 @@ footer p{color:#bbb;line-height:1.7}
     <div><h2>GLOBAL <span style="color:#d4af37">DECKS</span></h2><p data-lv="Premium skeita dēļu dizaini." data-en="Premium skateboard deck designs.">Premium skeita dēļu dizaini.</p></div>
     <div><h3 data-lv="Veikals" data-en="Shop">Veikals</h3><p data-lv="Visi dēļi<br>Custom dizains<br>Pilns komplekts" data-en="All decks<br>Custom design<br>Complete setup">Visi dēļi<br>Custom dizains<br>Pilns komplekts</p></div>
     <div><h3 data-lv="Kolekcijas" data-en="Collections">Kolekcijas</h3><p>World<br>Gaming<br>Street<br>Pets<br>Parts</p></div>
-    <div><h3 data-lv="Kontakti" data-en="Contact">Kontakti</h3><p>globaldecks@gmail.com<br>Instagram • TikTok • YouTube</p></div>
+    <div><h3 data-lv="Kontakti" data-en="Contact">Kontakti</h3><p>info@globaldecks.com<br>Instagram • TikTok • YouTube</p></div>
   </div>
 </footer>
 
@@ -862,19 +946,19 @@ function getAllCategories(){
 }
 
 const decks = [
-["animal","BOARDS/animal/cat.png","cat"],["animal","BOARDS/animal/cat1.png","cat1"],["animal","BOARDS/animal/dog.png","dog"],["animal","BOARDS/animal/dog1.png","dog1"],["animal","BOARDS/animal/dog2.png","dog2"],["animal","BOARDS/animal/kobra.png","kobra"],["animal","BOARDS/animal/unicorn.png","unicorn"],
-["car","BOARDS/car/bugatti.png","bugatti"],["car","BOARDS/car/bugatti2.png","bugatti2"],["car","BOARDS/car/bugatti3.png","bugatti3"],
-["cartoon","BOARDS/cartoon/comic.png","comic"],["cartoon","BOARDS/cartoon/dog.png","dog"],["cartoon","BOARDS/cartoon/mushroom.png","mushroom"],["cartoon","BOARDS/cartoon/spanchbob.png","spanchbob"],
-["flag","BOARDS/flag/Latvia.png","Latvia"],
-["games","BOARDS/games/CS.png","CS"],["games","BOARDS/games/cyber.png","cyber"],["games","BOARDS/games/mario.png","mario"],
-["grafiti","BOARDS/grafiti/graf.png","graf"],["grafiti","BOARDS/grafiti/graf1.png","graf1"],["grafiti","BOARDS/grafiti/graf2.png","graf2"],["grafiti","BOARDS/grafiti/graf3.png","graf3"],
-["horror","BOARDS/horror/catacomb.png","catacomb"],["horror","BOARDS/horror/MURON.png","MURON"],["horror","BOARDS/horror/MURON2.png","MURON2"],["horror","BOARDS/horror/MURON3.png","MURON3"],["horror","BOARDS/horror/pennywise.png","pennywise"],["horror","BOARDS/horror/pennywise2.png","pennywise2"],["horror","BOARDS/horror/saw.png","saw"],
-["monument","BOARDS/monument/milda.png","milda"],["monument","BOARDS/monument/wtc.png","wtc"],
-["music","BOARDS/music/prodigy.png","prodigy"],
-["social","BOARDS/social/snapchat.png","snapchat"],["social","BOARDS/social/tiktok.png","tiktok"],
-["style","BOARDS/style/altushka.png","altushka"],["style","BOARDS/style/ALTUSHKA2.png","ALTUSHKA2"],["style","BOARDS/style/ALTUSHKA3.png","ALTUSHKA3"],["style","BOARDS/style/ALTUSHKA4.png","ALTUSHKA4"],["style","BOARDS/style/punk.png","punk"],
-["vibe","BOARDS/vibe/67.png","67"],["vibe","BOARDS/vibe/67color.png","67color"],["vibe","BOARDS/vibe/disneyland.png","disneyland"],["vibe","BOARDS/vibe/florence.png","florence"],["vibe","BOARDS/vibe/mcdonald.png","mcdonald"],["vibe","BOARDS/vibe/serfing.png","serfing"],["vibe","BOARDS/vibe/skateborder.png","skateborder"],["vibe","BOARDS/vibe/wave.png","wave"],
-["world","BOARDS/world/agdama.png","agdama"],["world","BOARDS/world/alps.png","alps"],["world","BOARDS/world/barcelona.png","barcelona"],["world","BOARDS/world/bejing.png","bejing"],["world","BOARDS/world/berlin.png","berlin"],["world","BOARDS/world/canbera.png","canbera"],["world","BOARDS/world/cdmx.png","cdmx"],["world","BOARDS/world/dubai.png","dubai"],["world","BOARDS/world/dublin.png","dublin"],["world","BOARDS/world/lasvegas.png","lasvegas"],["world","BOARDS/world/london.png","london"],["world","BOARDS/world/miami.png","miami"],["world","BOARDS/world/moscov.png","moscov"],["world","BOARDS/world/newyork.png","newyork"],["world","BOARDS/world/paris.png","paris"],["world","BOARDS/world/planets.png","planets"],["world","BOARDS/world/pripyat.png","pripyat"],["world","BOARDS/world/riga.png","riga"],["world","BOARDS/world/rio.png","rio"],["world","BOARDS/world/roma.png","roma"],["world","BOARDS/world/saopaulo.png","saopaulo"],["world","BOARDS/world/sardegna.png","sardegna"],["world","BOARDS/world/sydney.png","sydney"],["world","BOARDS/world/tibet.png","tibet"],["world","BOARDS/world/tokyo.png","tokyo"],["world","BOARDS/world/varosha.png","varosha"],["world","BOARDS/world/wellington.png","wellington"],
+["animal","BOARDS/animal/cat.jpg","cat"],["animal","BOARDS/animal/cat1.jpg","cat1"],["animal","BOARDS/animal/dog.jpg","dog"],["animal","BOARDS/animal/dog1.jpg","dog1"],["animal","BOARDS/animal/dog2.jpg","dog2"],["animal","BOARDS/animal/kobra.jpg","kobra"],["animal","BOARDS/animal/unicorn.jpg","unicorn"],
+["car","BOARDS/car/bugatti.jpg","bugatti"],["car","BOARDS/car/bugatti2.jpg","bugatti2"],["car","BOARDS/car/bugatti3.jpg","bugatti3"],
+["cartoon","BOARDS/cartoon/comic.jpg","comic"],["cartoon","BOARDS/cartoon/dog.jpg","dog"],["cartoon","BOARDS/cartoon/mushroom.jpg","mushroom"],["cartoon","BOARDS/cartoon/spanchbob.jpg","spanchbob"],
+["flag","BOARDS/flag/Latvia.jpg","Latvia"],
+["games","BOARDS/games/CS.jpg","CS"],["games","BOARDS/games/cyber.jpg","Cyber Pixel"],["games","BOARDS/games/mario.jpg","mario"],
+["grafiti","BOARDS/grafiti/graf.jpg","Street Graffiti"],["grafiti","BOARDS/grafiti/graf1.jpg","graf1"],["grafiti","BOARDS/grafiti/graf2.jpg","graf2"],["grafiti","BOARDS/grafiti/graf3.jpg","graf3"],
+["horror","BOARDS/horror/catacomb.jpg","catacomb"],["horror","BOARDS/horror/MURON.jpg","MURON"],["horror","BOARDS/horror/MURON2.jpg","MURON2"],["horror","BOARDS/horror/MURON3.jpg","MURON3"],["horror","BOARDS/horror/pennywise.jpg","pennywise"],["horror","BOARDS/horror/pennywise2.jpg","pennywise2"],["horror","BOARDS/horror/saw.jpg","saw"],
+["monument","BOARDS/monument/milda.jpg","milda"],["monument","BOARDS/monument/wtc.jpg","wtc"],
+["music","BOARDS/music/prodigy.jpg","prodigy"],
+["social","BOARDS/social/snapchat.jpg","Snap Ghost"],["social","BOARDS/social/tiktok.jpg","tiktok"],
+["style","BOARDS/style/altushka.jpg","altushka"],["style","BOARDS/style/ALTUSHKA2.jpg","ALTUSHKA2"],["style","BOARDS/style/ALTUSHKA3.jpg","ALTUSHKA3"],["style","BOARDS/style/ALTUSHKA4.jpg","ALTUSHKA4"],["style","BOARDS/style/punk.jpg","punk"],
+["vibe","BOARDS/vibe/67.jpg","67"],["vibe","BOARDS/vibe/67color.jpg","67color"],["vibe","BOARDS/vibe/disneyland.jpg","disneyland"],["vibe","BOARDS/vibe/florence.jpg","florence"],["vibe","BOARDS/vibe/mcdonald.jpg","mcdonald"],["vibe","BOARDS/vibe/serfing.jpg","serfing"],["vibe","BOARDS/vibe/skateborder.jpg","skateborder"],["vibe","BOARDS/vibe/wave.jpg","wave"],
+["world","BOARDS/world/agdama.jpg","agdama"],["world","BOARDS/world/alps.jpg","alps"],["world","BOARDS/world/barcelona.jpg","barcelona"],["world","BOARDS/world/bejing.jpg","bejing"],["world","BOARDS/world/berlin.jpg","berlin"],["world","BOARDS/world/canbera.jpg","canbera"],["world","BOARDS/world/cdmx.jpg","cdmx"],["world","BOARDS/world/dubai.jpg","dubai"],["world","BOARDS/world/dublin.jpg","dublin"],["world","BOARDS/world/lasvegas.jpg","lasvegas"],["world","BOARDS/world/london.jpg","london"],["world","BOARDS/world/miami.jpg","miami"],["world","BOARDS/world/moscov.jpg","moscov"],["world","BOARDS/world/newyork.jpg","newyork"],["world","BOARDS/world/paris.jpg","paris"],["world","BOARDS/world/planets.jpg","planets"],["world","BOARDS/world/pripyat.jpg","pripyat"],["world","BOARDS/world/riga.jpg","riga"],["world","BOARDS/world/rio.jpg","rio"],["world","BOARDS/world/roma.jpg","roma"],["world","BOARDS/world/saopaulo.jpg","saopaulo"],["world","BOARDS/world/sardegna.jpg","sardegna"],["world","BOARDS/world/sydney.jpg","sydney"],["world","BOARDS/world/tibet.jpg","tibet"],["world","BOARDS/world/tokyo.jpg","tokyo"],["world","BOARDS/world/varosha.jpg","varosha"],["world","BOARDS/world/wellington.jpg","wellington"],
 ["parts","ASSETS/parts/wheels.png","Wheels"],
 ["parts","ASSETS/parts/trucks.png","Trucks"],
 ["parts","ASSETS/parts/bearings.png","Bearings"],
@@ -903,10 +987,10 @@ function renderFeatured(){
   const buyText = currentLang === "lv" ? "PIRKT" : "BUY";
 
   const defaultFeatured = [
-    ["games","BOARDS/games/cyber.png","Cyber Pixel"],
-    ["social","BOARDS/social/snapchat.png","Snap Ghost"],
-    ["animal","BOARDS/animal/cat.png","Paws Legend"],
-    ["grafiti","BOARDS/grafiti/graf.png","Street Graffiti"]
+    ["games","BOARDS/games/cyber.jpg","Cyber Pixel"],
+    ["social","BOARDS/social/snapchat.jpg","Snap Ghost"],
+    ["animal","BOARDS/animal/cat.jpg","Paws Legend"],
+    ["grafiti","BOARDS/grafiti/graf.jpg","Street Graffiti"]
   ];
 
   let featuredDecks = customDecks
