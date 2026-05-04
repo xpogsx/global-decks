@@ -613,6 +613,17 @@ footer p{color:#bbb;line-height:1.7}
   .custom-box{padding:26px}
 }
 </style>
+
+<script>
+function imgFallback(img, paths){
+  if(!img.dataset.tryIndex){ img.dataset.tryIndex = "0"; }
+  let i = parseInt(img.dataset.tryIndex, 10);
+  if(i >= paths.length) return;
+  img.dataset.tryIndex = String(i + 1);
+  img.src = paths[i];
+}
+</script>
+
 </head>
 
 <body>
@@ -769,95 +780,95 @@ footer p{color:#bbb;line-height:1.7}
 
   <div class="parts-grid">
     <div class="part-card">
-      <img src="ASSETS/parts/wheel1.jpg" onclick="openImg(this.src)" alt="Wheels 1">
-      <h3 data-lv="Riteņi 1" data-en="Wheels 1">Riteņi 1</h3>
+      <img src="ASSETS/parts/wheels1.jpg" onerror="imgFallback(this, ['ASSETS/parts/wheel1.jpg','ASSETS/parts/wheels1.png','ASSETS/parts/wheel1.png','ASSETS/parts/Wheels1.jpg','ASSETS/parts/Wheel1.jpg'])" onclick="openImg(this.src)" alt="Wheels 1">
+      <h3 data-lv="F1" data-en="F1">F1</h3>
       <p data-lv="Premium skeita riteņi ar unikālu dizainu. Piemēroti pilnam komplektam vai esošā skeita uzlabošanai."
          data-en="Premium skateboard wheels with a unique design. Suitable for a complete setup or upgrading your current skateboard.">
          Premium skeita riteņi ar unikālu dizainu. Piemēroti pilnam komplektam vai esošā skeita uzlabošanai.
       </p>
       <div class="price">€69</div>
-      <button class="buy-btn" onclick="buyDirect(currentLang === 'lv' ? 'Riteņi 1' : 'Wheels 1', currentLang === 'lv' ? 'Daļas' : 'Parts', '€69')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
+      <button class="buy-btn" onclick="buyDirect('F1', currentLang === 'lv' ? 'Daļas' : 'Parts', '€69')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
     </div>
 
     <div class="part-card">
-      <img src="ASSETS/parts/wheel2.jpg" onclick="openImg(this.src)" alt="Wheels 2">
-      <h3 data-lv="Riteņi 2" data-en="Wheels 2">Riteņi 2</h3>
+      <img src="ASSETS/parts/wheels2.jpg" onerror="imgFallback(this, ['ASSETS/parts/wheel2.jpg','ASSETS/parts/wheels2.png','ASSETS/parts/wheel2.png','ASSETS/parts/Wheels2.jpg','ASSETS/parts/Wheel2.jpg'])" onclick="openImg(this.src)" alt="Wheels 2">
+      <h3 data-lv="PZERO" data-en="PZERO">PZERO</h3>
       <p data-lv="Premium skeita riteņi ar unikālu dizainu. Piemēroti pilnam komplektam vai esošā skeita uzlabošanai."
          data-en="Premium skateboard wheels with a unique design. Suitable for a complete setup or upgrading your current skateboard.">
          Premium skeita riteņi ar unikālu dizainu. Piemēroti pilnam komplektam vai esošā skeita uzlabošanai.
       </p>
       <div class="price">€69</div>
-      <button class="buy-btn" onclick="buyDirect(currentLang === 'lv' ? 'Riteņi 2' : 'Wheels 2', currentLang === 'lv' ? 'Daļas' : 'Parts', '€69')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
+      <button class="buy-btn" onclick="buyDirect('PZERO', currentLang === 'lv' ? 'Daļas' : 'Parts', '€69')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
     </div>
 
     <div class="part-card">
-      <img src="ASSETS/parts/wheel3.jpg" onclick="openImg(this.src)" alt="Wheels 3">
-      <h3 data-lv="Riteņi 3" data-en="Wheels 3">Riteņi 3</h3>
+      <img src="ASSETS/parts/wheels3.jpg" onerror="imgFallback(this, ['ASSETS/parts/wheel3.jpg','ASSETS/parts/wheels3.png','ASSETS/parts/wheel3.png','ASSETS/parts/Wheels3.jpg','ASSETS/parts/Wheel3.jpg'])" onclick="openImg(this.src)" alt="Wheels 3">
+      <h3 data-lv="NO LIMIT" data-en="NO LIMIT">NO LIMIT</h3>
       <p data-lv="Premium skeita riteņi ar unikālu dizainu. Piemēroti pilnam komplektam vai esošā skeita uzlabošanai."
          data-en="Premium skateboard wheels with a unique design. Suitable for a complete setup or upgrading your current skateboard.">
          Premium skeita riteņi ar unikālu dizainu. Piemēroti pilnam komplektam vai esošā skeita uzlabošanai.
       </p>
-      <div class="price">€69</div>
-      <button class="buy-btn" onclick="buyDirect(currentLang === 'lv' ? 'Riteņi 3' : 'Wheels 3', currentLang === 'lv' ? 'Daļas' : 'Parts', '€69')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
+      <div class="price">€110</div>
+      <button class="buy-btn" onclick="buyDirect('NO LIMIT', currentLang === 'lv' ? 'Daļas' : 'Parts', '€110')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
     </div>
 
     <div class="part-card">
-      <img src="ASSETS/parts/wheel4.jpg" onclick="openImg(this.src)" alt="Wheels 4">
-      <h3 data-lv="Riteņi 4" data-en="Wheels 4">Riteņi 4</h3>
+      <img src="ASSETS/parts/wheels4.jpg" onerror="imgFallback(this, ['ASSETS/parts/wheel4.jpg','ASSETS/parts/wheels4.png','ASSETS/parts/wheel4.png','ASSETS/parts/Wheels4.jpg','ASSETS/parts/Wheel4.jpg'])" onclick="openImg(this.src)" alt="Wheels 4">
+      <h3 data-lv="NO LIMIT X" data-en="NO LIMIT X">NO LIMIT X</h3>
       <p data-lv="Premium skeita riteņi ar unikālu dizainu. Piemēroti pilnam komplektam vai esošā skeita uzlabošanai."
          data-en="Premium skateboard wheels with a unique design. Suitable for a complete setup or upgrading your current skateboard.">
          Premium skeita riteņi ar unikālu dizainu. Piemēroti pilnam komplektam vai esošā skeita uzlabošanai.
       </p>
-      <div class="price">€69</div>
-      <button class="buy-btn" onclick="buyDirect(currentLang === 'lv' ? 'Riteņi 4' : 'Wheels 4', currentLang === 'lv' ? 'Daļas' : 'Parts', '€69')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
+      <div class="price">€110</div>
+      <button class="buy-btn" onclick="buyDirect('NO LIMIT X', currentLang === 'lv' ? 'Daļas' : 'Parts', '€110')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
     </div>
 
     <div class="part-card">
-      <img src="ASSETS/parts/wheel5.jpg" onclick="openImg(this.src)" alt="Wheels 5">
-      <h3 data-lv="Riteņi 5" data-en="Wheels 5">Riteņi 5</h3>
+      <img src="ASSETS/parts/wheels5.jpg" onerror="imgFallback(this, ['ASSETS/parts/wheel5.jpg','ASSETS/parts/wheels5.png','ASSETS/parts/wheel5.png','ASSETS/parts/Wheels5.jpg','ASSETS/parts/Wheel5.jpg'])" onclick="openImg(this.src)" alt="Wheels 5">
+      <h3 data-lv="RACE" data-en="RACE">RACE</h3>
       <p data-lv="Premium skeita riteņi ar unikālu dizainu. Piemēroti pilnam komplektam vai esošā skeita uzlabošanai."
          data-en="Premium skateboard wheels with a unique design. Suitable for a complete setup or upgrading your current skateboard.">
          Premium skeita riteņi ar unikālu dizainu. Piemēroti pilnam komplektam vai esošā skeita uzlabošanai.
       </p>
-      <div class="price">€69</div>
-      <button class="buy-btn" onclick="buyDirect(currentLang === 'lv' ? 'Riteņi 5' : 'Wheels 5', currentLang === 'lv' ? 'Daļas' : 'Parts', '€69')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
+      <div class="price">€120</div>
+      <button class="buy-btn" onclick="buyDirect('RACE', currentLang === 'lv' ? 'Daļas' : 'Parts', '€120')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
     </div>
 
     <div class="part-card">
-      <img src="ASSETS/parts/wheel6.jpg" onclick="openImg(this.src)" alt="Wheels 6">
-      <h3 data-lv="Riteņi 6" data-en="Wheels 6">Riteņi 6</h3>
+      <img src="ASSETS/parts/wheels6.jpg" onerror="imgFallback(this, ['ASSETS/parts/wheel6.jpg','ASSETS/parts/wheels6.png','ASSETS/parts/wheel6.png','ASSETS/parts/Wheels6.jpg','ASSETS/parts/Wheel6.jpg'])" onclick="openImg(this.src)" alt="Wheels 6">
+      <h3 data-lv="CUSTOM RACE" data-en="CUSTOM RACE">CUSTOM RACE</h3>
       <p data-lv="Premium skeita riteņi ar unikālu dizainu. Piemēroti pilnam komplektam vai esošā skeita uzlabošanai."
          data-en="Premium skateboard wheels with a unique design. Suitable for a complete setup or upgrading your current skateboard.">
          Premium skeita riteņi ar unikālu dizainu. Piemēroti pilnam komplektam vai esošā skeita uzlabošanai.
       </p>
-      <div class="price">€69</div>
-      <button class="buy-btn" onclick="buyDirect(currentLang === 'lv' ? 'Riteņi 6' : 'Wheels 6', currentLang === 'lv' ? 'Daļas' : 'Parts', '€69')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
+      <div class="price">€120</div>
+      <button class="buy-btn" onclick="buyDirect('CUSTOM RACE', currentLang === 'lv' ? 'Daļas' : 'Parts', '€120')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
     </div>
 
     <div class="part-card">
-      <img src="ASSETS/parts/wheel7.jpg" onclick="openImg(this.src)" alt="Wheels 7">
-      <h3 data-lv="Riteņi 7" data-en="Wheels 7">Riteņi 7</h3>
+      <img src="ASSETS/parts/wheels7.jpg" onerror="imgFallback(this, ['ASSETS/parts/wheel7.jpg','ASSETS/parts/wheels7.png','ASSETS/parts/wheel7.png','ASSETS/parts/Wheels7.jpg','ASSETS/parts/Wheel7.jpg'])" onclick="openImg(this.src)" alt="Wheels 7">
+      <h3 data-lv="HELLO KITTY" data-en="HELLO KITTY">HELLO KITTY</h3>
       <p data-lv="Premium skeita riteņi ar unikālu dizainu. Piemēroti pilnam komplektam vai esošā skeita uzlabošanai."
          data-en="Premium skateboard wheels with a unique design. Suitable for a complete setup or upgrading your current skateboard.">
          Premium skeita riteņi ar unikālu dizainu. Piemēroti pilnam komplektam vai esošā skeita uzlabošanai.
       </p>
-      <div class="price">€69</div>
-      <button class="buy-btn" onclick="buyDirect(currentLang === 'lv' ? 'Riteņi 7' : 'Wheels 7', currentLang === 'lv' ? 'Daļas' : 'Parts', '€69')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
+      <div class="price">€99</div>
+      <button class="buy-btn" onclick="buyDirect('HELLO KITTY', currentLang === 'lv' ? 'Daļas' : 'Parts', '€99')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
     </div>
 
     <div class="part-card">
-      <img src="ASSETS/parts/wheel8.jpg" onclick="openImg(this.src)" alt="Wheels 8">
-      <h3 data-lv="Riteņi 8" data-en="Wheels 8">Riteņi 8</h3>
+      <img src="ASSETS/parts/wheels8.jpg" onerror="imgFallback(this, ['ASSETS/parts/wheel8.jpg','ASSETS/parts/wheels8.png','ASSETS/parts/wheel8.png','ASSETS/parts/Wheels8.jpg','ASSETS/parts/Wheel8.jpg'])" onclick="openImg(this.src)" alt="Wheels 8">
+      <h3 data-lv="WARZONE" data-en="WARZONE">WARZONE</h3>
       <p data-lv="Premium skeita riteņi ar unikālu dizainu. Piemēroti pilnam komplektam vai esošā skeita uzlabošanai."
          data-en="Premium skateboard wheels with a unique design. Suitable for a complete setup or upgrading your current skateboard.">
          Premium skeita riteņi ar unikālu dizainu. Piemēroti pilnam komplektam vai esošā skeita uzlabošanai.
       </p>
-      <div class="price">€69</div>
-      <button class="buy-btn" onclick="buyDirect(currentLang === 'lv' ? 'Riteņi 8' : 'Wheels 8', currentLang === 'lv' ? 'Daļas' : 'Parts', '€69')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
+      <div class="price">€59</div>
+      <button class="buy-btn" onclick="buyDirect('WARZONE', currentLang === 'lv' ? 'Daļas' : 'Parts', '€59')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
     </div>
 
 <div class="part-card">
-      <img src="ASSETS/parts/trucks.jpg" onclick="openImg(this.src)" alt="Trucks">
+      <img src="ASSETS/parts/trucks.jpg" onerror="imgFallback(this, [\'ASSETS/parts/trucks.png\',\'ASSETS/parts/TRUCKS.jpg\',\'ASSETS/parts/Trucks.jpg\'])" onclick="openImg(this.src)" alt="Trucks">
       <h3 data-lv="Trucki" data-en="Trucks">Trucki</h3>
       <p data-lv="Izturīgi trucki stabilai braukšanai un labākai kontrolei. Piemēroti premium komplektiem."
          data-en="Durable trucks for stable riding and better control. Suitable for premium setups.">
@@ -868,7 +879,7 @@ footer p{color:#bbb;line-height:1.7}
     </div>
 
     <div class="part-card">
-      <img src="ASSETS/parts/bearings.jpg" onclick="openImg(this.src)" alt="Bearings">
+      <img src="ASSETS/parts/bearings.jpg" onerror="imgFallback(this, [\'ASSETS/parts/bearings.png\',\'ASSETS/parts/BEARINGS.jpg\',\'ASSETS/parts/Bearings.jpg\'])" onclick="openImg(this.src)" alt="Bearings">
       <h3 data-lv="Gultņi" data-en="Bearings">Gultņi</h3>
       <p data-lv="Gludi un ātri gultņi labākam ripojumam. Neliela detaļa, kas ļoti ietekmē braukšanu."
          data-en="Smooth and fast bearings for better rolling. A small part that makes a big difference.">
@@ -879,7 +890,7 @@ footer p{color:#bbb;line-height:1.7}
     </div>
 
     <div class="part-card">
-      <img src="ASSETS/parts/griptape.jpg" onclick="openImg(this.src)" alt="Griptape">
+      <img src="ASSETS/parts/griptape.jpg" onerror="imgFallback(this, [\'ASSETS/parts/griptape.png\',\'ASSETS/parts/GRIPTAPE.jpg\',\'ASSETS/parts/Griptape.jpg\'])" onclick="openImg(this.src)" alt="Griptape">
       <h3 data-lv="Griptape" data-en="Griptape">Griptape</h3>
       <p data-lv="Saķeres pārklājums dēļa augšai. Palīdz kājām turēties stabili uz dēļa."
          data-en="Grip surface for the top of the deck. Helps your feet stay stable on the board.">
@@ -890,7 +901,7 @@ footer p{color:#bbb;line-height:1.7}
     </div>
 
     <div class="part-card">
-      <img src="ASSETS/parts/screws.jpg" onclick="openImg(this.src)" alt="Screws">
+      <img src="ASSETS/parts/screws.jpg" onerror="imgFallback(this, [\'ASSETS/parts/screws.png\',\'ASSETS/parts/SCREWS.jpg\',\'ASSETS/parts/Screws.jpg\'])" onclick="openImg(this.src)" alt="Screws">
       <h3 data-lv="Skrūves" data-en="Screws">Skrūves</h3>
       <p data-lv="Skrūvju komplekts trucku piestiprināšanai pie dēļa. Nepieciešams pilnai salikšanai."
          data-en="Screw set for attaching trucks to the deck. Needed for a complete build.">
@@ -1037,14 +1048,14 @@ const decks = [
 ["style","BOARDS/style/altushka.jpg","altushka"],["style","BOARDS/style/ALTUSHKA2.jpg","ALTUSHKA2"],["style","BOARDS/style/ALTUSHKA3.jpg","ALTUSHKA3"],["style","BOARDS/style/ALTUSHKA4.jpg","ALTUSHKA4"],["style","BOARDS/style/punk.jpg","punk"],
 ["vibe","BOARDS/vibe/67.jpg","67"],["vibe","BOARDS/vibe/67color.jpg","67color"],["vibe","BOARDS/vibe/disneyland.jpg","disneyland"],["vibe","BOARDS/vibe/florence.jpg","florence"],["vibe","BOARDS/vibe/mcdonald.jpg","mcdonald"],["vibe","BOARDS/vibe/serfing.jpg","serfing"],["vibe","BOARDS/vibe/skateborder.jpg","skateborder"],["vibe","BOARDS/vibe/wave.jpg","wave"],
 ["world","BOARDS/world/agdama.jpg","agdama"],["world","BOARDS/world/alps.jpg","alps"],["world","BOARDS/world/barcelona.jpg","barcelona"],["world","BOARDS/world/bejing.jpg","bejing"],["world","BOARDS/world/berlin.jpg","berlin"],["world","BOARDS/world/canbera.jpg","canbera"],["world","BOARDS/world/cdmx.jpg","cdmx"],["world","BOARDS/world/dubai.jpg","dubai"],["world","BOARDS/world/dublin.jpg","dublin"],["world","BOARDS/world/lasvegas.jpg","lasvegas"],["world","BOARDS/world/london.jpg","london"],["world","BOARDS/world/miami.jpg","miami"],["world","BOARDS/world/moscov.jpg","moscov"],["world","BOARDS/world/newyork.jpg","newyork"],["world","BOARDS/world/paris.jpg","paris"],["world","BOARDS/world/planets.jpg","planets"],["world","BOARDS/world/pripyat.jpg","pripyat"],["world","BOARDS/world/riga.jpg","riga"],["world","BOARDS/world/rio.jpg","rio"],["world","BOARDS/world/roma.jpg","roma"],["world","BOARDS/world/saopaulo.jpg","saopaulo"],["world","BOARDS/world/sardegna.jpg","sardegna"],["world","BOARDS/world/sydney.jpg","sydney"],["world","BOARDS/world/tibet.jpg","tibet"],["world","BOARDS/world/tokyo.jpg","tokyo"],["world","BOARDS/world/varosha.jpg","varosha"],["world","BOARDS/world/wellington.jpg","wellington"],
-["parts","ASSETS/parts/wheel1.jpg","Wheels 1"],
-["parts","ASSETS/parts/wheel2.jpg","Wheels 2"],
-["parts","ASSETS/parts/wheel3.jpg","Wheels 3"],
-["parts","ASSETS/parts/wheel4.jpg","Wheels 4"],
-["parts","ASSETS/parts/wheel5.jpg","Wheels 5"],
-["parts","ASSETS/parts/wheel6.jpg","Wheels 6"],
-["parts","ASSETS/parts/wheel7.jpg","Wheels 7"],
-["parts","ASSETS/parts/wheel8.jpg","Wheels 8"],
+["parts","ASSETS/parts/wheels1.jpg","F1"],
+["parts","ASSETS/parts/wheels2.jpg","PZERO"],
+["parts","ASSETS/parts/wheels3.jpg","NO LIMIT"],
+["parts","ASSETS/parts/wheels4.jpg","NO LIMIT X"],
+["parts","ASSETS/parts/wheels5.jpg","RACE"],
+["parts","ASSETS/parts/wheels6.jpg","CUSTOM RACE"],
+["parts","ASSETS/parts/wheels7.jpg","HELLO KITTY"],
+["parts","ASSETS/parts/wheels8.jpg","WARZONE"],
 ["parts","ASSETS/parts/trucks.jpg","Trucks"],
 ["parts","ASSETS/parts/bearings.jpg","Bearings"],
 ["parts","ASSETS/parts/griptape.jpg","Griptape"],
@@ -1088,7 +1099,7 @@ function renderFeatured(){
 
   grid.innerHTML = featuredDecks.map(d => `
     <div class="feature-card">
-      <img src="${d[1]}" onclick="openImg(this.src)">
+      <img src="${d[1]}" onerror="imgFallback(this, [this.src.replace(/\\.jpg$/i, \'.png\'), this.src.replace(/wheels/i, \'wheel\'), this.src.replace(/wheel/i, \'wheels\')])" onclick="openImg(this.src)">
       <div>
         <h3>${deckName(d)}</h3>
         <p>${options.deck.price}</p>
@@ -1119,14 +1130,14 @@ function renderDecks(){
     : "Image shows the design. Choose exactly what you want to order below.";
 
   const partPrices = {
-    "Wheels 1":"€69",
-    "Wheels 2":"€69",
-    "Wheels 3":"€69",
-    "Wheels 4":"€69",
-    "Wheels 5":"€69",
-    "Wheels 6":"€69",
-    "Wheels 7":"€69",
-    "Wheels 8":"€69",
+    "F1":"€69",
+    "PZERO":"€69",
+    "NO LIMIT":"€110",
+    "NO LIMIT X":"€110",
+    "RACE":"€120",
+    "CUSTOM RACE":"€120",
+    "HELLO KITTY":"€99",
+    "WARZONE":"€59",
     "Wheels":"€69",
     "Trucks":"€89",
     "Bearings":"€29",
@@ -1153,7 +1164,7 @@ function renderDecks(){
         : "Separate component for building or upgrading a skateboard.";
 
       return `<div class="card ${d[0]}">
-        <img src="${d[1]}" onclick="openImg(this.src)">
+        <img src="${d[1]}" onerror="imgFallback(this, [this.src.replace(/\\.jpg$/i, \'.png\'), this.src.replace(/wheels/i, \'wheel\'), this.src.replace(/wheel/i, \'wheels\')])" onclick="openImg(this.src)">
         <h3>${deckName(d)}</h3>
         ${customBadge}
         <div class="part-note">${partText}</div>
@@ -1163,7 +1174,7 @@ function renderDecks(){
     }
 
     return `<div class="card ${d[0]}">
-      <img src="${d[1]}" onclick="openImg(this.src)">
+      <img src="${d[1]}" onerror="imgFallback(this, [this.src.replace(/\\.jpg$/i, \'.png\'), this.src.replace(/wheels/i, \'wheel\'), this.src.replace(/wheel/i, \'wheels\')])" onclick="openImg(this.src)">
       <h3>${deckName(d)}</h3>
       ${customBadge}
       <div class="product-note">${note}</div>
@@ -1328,48 +1339,6 @@ function filterDecks(category){
 renderFeatured();
 renderFilters();
 renderDecks();
-</script>
-
-
-
-<script>
-document.addEventListener("error", function(e){
-  const img = e.target;
-  if(img.tagName !== "IMG") return;
-
-  const current = img.getAttribute("src") || "";
-  const tries = JSON.parse(img.dataset.fallbackList || "[]");
-
-  if(tries.length === 0){
-    const list = [];
-    if(current.toLowerCase().endsWith(".jpg")) list.push(current.replace(/\.jpg$/i, ".png"));
-    if(current.toLowerCase().endsWith(".png")) list.push(current.replace(/\.png$/i, ".jpg"));
-
-    const wheelMatch = current.match(/ASSETS\/parts\/wheel(\d+)\.(jpg|png)$/i);
-    if(wheelMatch){
-      const n = wheelMatch[1];
-      list.push(`ASSETS/parts/wheels${n}.jpg`);
-      list.push(`ASSETS/parts/wheels${n}.png`);
-    }
-
-    const wheelsMatch = current.match(/ASSETS\/parts\/wheels(\d+)\.(jpg|png)$/i);
-    if(wheelsMatch){
-      const n = wheelsMatch[1];
-      list.push(`ASSETS/parts/wheel${n}.jpg`);
-      list.push(`ASSETS/parts/wheel${n}.png`);
-    }
-
-    img.dataset.fallbackList = JSON.stringify([...new Set(list)]);
-  }
-
-  const fallbackList = JSON.parse(img.dataset.fallbackList || "[]");
-  const next = fallbackList.shift();
-
-  if(next){
-    img.dataset.fallbackList = JSON.stringify(fallbackList);
-    img.src = next;
-  }
-}, true);
 </script>
 
 </body>
