@@ -69,7 +69,7 @@ nav a:hover{color:var(--gold)}
   padding:70px 9%;
   background:
     linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.45),rgba(0,0,0,.9)),
-    url("ASSETS/branding/boardback.png");
+    url("ASSETS/branding/boardback.jpg");
   background-size:cover;
   background-position:center;
   border-bottom:1px solid var(--gold)
@@ -202,7 +202,7 @@ nav a:hover{color:var(--gold)}
   padding:75px 7%;
   background:
     linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.94)),
-    url("ASSETS/process/process2.png");
+    url("ASSETS/process/process2.jpg");
   background-size:cover;
   background-position:center;
   border-top:1px solid rgba(212,175,55,.35);
@@ -619,7 +619,7 @@ footer p{color:#bbb;line-height:1.7}
 
 <header>
   <div class="logo">
-    <img src="ASSETS/logo/logo.png" alt="Global Decks SS logo">
+    <img src="ASSETS/logo/logo.jpg" alt="Global Decks SS logo">
   </div>
 
   <nav>
@@ -698,9 +698,9 @@ footer p{color:#bbb;line-height:1.7}
 <section class="branding">
   <h2 class="section-title" data-lv="Premium <span>SS kolekcija</span>" data-en="Premium <span>SS collection</span>">Premium <span>SS kolekcija</span></h2>
   <div class="branding-grid">
-    <img src="ASSETS/branding/boardback.png" onclick="openImg(this.src)">
-    <img src="ASSETS/branding/boardfront.png" onclick="openImg(this.src)">
-    <img src="ASSETS/branding/boardside.png" onclick="openImg(this.src)">
+    <img src="ASSETS/branding/boardback.jpg" onclick="openImg(this.src)">
+    <img src="ASSETS/branding/boardfront.jpg" onclick="openImg(this.src)">
+    <img src="ASSETS/branding/boardside.jpg" onclick="openImg(this.src)">
   </div>
 </section>
 
@@ -713,8 +713,8 @@ footer p{color:#bbb;line-height:1.7}
   </p>
 
   <div class="process-gallery">
-    <img src="ASSETS/process/process1.png" onclick="openImg(this.src)" alt="Skateboard design process">
-    <img src="ASSETS/process/process2.png" onclick="openImg(this.src)" alt="Skateboard painting process">
+    <img src="ASSETS/process/process1.jpg" onclick="openImg(this.src)" alt="Skateboard design process">
+    <img src="ASSETS/process/process2.jpg" onclick="openImg(this.src)" alt="Skateboard painting process">
   </div>
 
   <div class="tech-boxes">
@@ -856,7 +856,7 @@ footer p{color:#bbb;line-height:1.7}
       <button class="buy-btn" onclick="buyDirect(currentLang === 'lv' ? 'Riteņi 8' : 'Wheels 8', currentLang === 'lv' ? 'Daļas' : 'Parts', '€69')" data-lv="PIRKT" data-en="BUY">PIRKT</button>
     </div>
 
-    <div class="part-card">
+<div class="part-card">
       <img src="ASSETS/parts/trucks.jpg" onclick="openImg(this.src)" alt="Trucks">
       <h3 data-lv="Trucki" data-en="Trucks">Trucki</h3>
       <p data-lv="Izturīgi trucki stabilai braukšanai un labākai kontrolei. Piemēroti premium komplektiem."
@@ -1328,6 +1328,19 @@ function filterDecks(category){
 renderFeatured();
 renderFilters();
 renderDecks();
+</script>
+
+
+<script>
+document.addEventListener("error", function(e){
+  const img = e.target;
+  if(img.tagName !== "IMG") return;
+  if(img.dataset.fallbackTried === "1") return;
+  if(img.src.toLowerCase().endsWith(".jpg")){
+    img.dataset.fallbackTried = "1";
+    img.src = img.src.replace(/\.jpg$/i, ".png");
+  }
+}, true);
 </script>
 
 </body>
