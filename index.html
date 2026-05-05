@@ -1,76 +1,759 @@
-<!DOCTYPE html><html lang="lv"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>GLOBAL DECKS SS</title><style>
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GLOBAL DECKS SS</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;700;900&display=swap');
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#050505;color:white;font-family:Arial,sans-serif}
-:root{--gold:#d4af37;--dark:#050505}
-header{position:sticky;top:0;z-index:10;background:#000;border-bottom:1px solid rgba(212,175,55,.6);padding:18px 7%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.logo{color:white;text-decoration:none;font-size:24px;font-weight:900;letter-spacing:1px}
-.logo span{color:var(--gold)}
-nav{display:flex;gap:18px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none;font-weight:900;text-transform:uppercase}
+body{
+  margin:0;
+  background:#050505;
+  color:white;
+  font-family:'Inter',Arial,sans-serif;
+}
+:root{
+  --gold:#d4af37;
+  --gold-dark:#8f6b16;
+}
+h1,h2,h3,nav a,.btn,.buy-btn,.filters button,.lang,.option-select{
+  font-family:'Cinzel',serif;
+}
+
+header{
+  min-height:88px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:10px 6%;
+  background:rgba(0,0,0,.96);
+  border-bottom:1px solid rgba(212,175,55,.55);
+  position:sticky;
+  top:0;
+  z-index:100;
+  backdrop-filter:blur(10px);
+}
+.logo img{
+  height:66px;
+  width:auto;
+  display:block;
+  filter:drop-shadow(0 0 12px rgba(212,175,55,.35));
+}
+nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+  flex-wrap:wrap;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:900;
+  text-transform:uppercase;
+}
 nav a:hover{color:var(--gold)}
-.hero{min-height:75vh;background:linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.55)),url("ASSETS/branding/boardback.jpg");background-size:cover;background-position:center;display:flex;align-items:center;padding:70px 8%;border-bottom:1px solid rgba(212,175,55,.45)}
-.hero h1{font-size:80px;line-height:.9;margin:0;text-transform:uppercase;text-shadow:0 0 25px rgba(212,175,55,.35)}
-.hero h1 span{display:block;color:var(--gold)}
-.hero p{font-size:20px;color:#ddd;line-height:1.6;max-width:640px}
-.btn,.buy-btn{display:inline-block;background:linear-gradient(135deg,var(--gold),#8f6b16);color:black;border:none;padding:14px 26px;font-weight:900;text-decoration:none;text-transform:uppercase;cursor:pointer}
-.btn:hover,.buy-btn:hover{filter:brightness(1.15);box-shadow:0 0 25px rgba(212,175,55,.5)}
-.section{padding:70px 7%}
-.section-title{text-align:center;font-size:42px;text-transform:uppercase;margin:0 0 30px}
+.lang{
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  color:black;
+  border:none;
+  padding:13px 18px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.hero{
+  min-height:82vh;
+  display:flex;
+  align-items:center;
+  padding:80px 9%;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.55),rgba(0,0,0,.96)),
+    url("ASSETS/branding/boardback.jpg");
+  background-size:cover;
+  background-position:center;
+  border-bottom:1px solid rgba(212,175,55,.55);
+}
+.hero-content{max-width:680px}
+.hero h1{
+  margin:0;
+  font-size:86px;
+  line-height:.9;
+  font-weight:900;
+  text-transform:uppercase;
+}
+.hero h1 span{
+  display:block;
+  color:var(--gold);
+  text-shadow:0 0 28px rgba(212,175,55,.65);
+}
+.hero h2{
+  letter-spacing:4px;
+  text-transform:uppercase;
+  margin:28px 0 16px;
+}
+.hero h2 span{color:var(--gold)}
+.hero p{
+  color:#ddd;
+  font-size:19px;
+  max-width:500px;
+  line-height:1.65;
+}
+.btn,.buy-btn{
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  color:black;
+  border:none;
+  font-weight:900;
+  cursor:pointer;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+.btn{
+  display:inline-block;
+  padding:15px 34px;
+  margin-top:18px;
+  box-shadow:0 0 25px rgba(212,175,55,.48);
+}
+.section-title{
+  text-align:center;
+  font-size:46px;
+  margin:70px 0 28px;
+  text-transform:uppercase;
+}
 .section-title span{color:var(--gold)}
-.intro{max-width:950px;margin:0 auto 35px;color:#ddd;text-align:center;font-size:18px;line-height:1.75}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px}
-.card,.info-box{background:linear-gradient(160deg,rgba(212,175,55,.12),rgba(0,0,0,.95));border:1px solid rgba(212,175,55,.5);padding:18px;text-align:center;box-shadow:0 0 24px rgba(212,175,55,.12)}
-.card{transition:.25s;overflow:hidden}
-.card:hover{transform:translateY(-6px);box-shadow:0 0 30px rgba(212,175,55,.4)}
-.card img{width:100%;height:200px;object-fit:cover;border-radius:12px;background:#090909}
-.card h3{text-transform:uppercase}
-.card p{color:#ccc;line-height:1.45;min-height:58px}
-.price{color:var(--gold);font-size:24px;font-weight:900;margin:14px 0}
-.buy-btn{width:100%}
-.info-box{max-width:1000px;margin:auto;text-align:left}
-.info-box p,.info-box li{color:#ddd;line-height:1.7;font-size:17px}
-.info-box strong{color:var(--gold)}
-.contact-row{padding:15px 0;border-bottom:1px solid rgba(212,175,55,.25)}
-.contact-row strong{display:block;color:var(--gold);text-transform:uppercase}
-.contact-row a{color:white}
-footer{background:#030303;border-top:1px solid rgba(212,175,55,.35);padding:40px 7%;color:#bbb}
-.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
+
+.featured,.shop-section{padding:30px 5% 75px;background:#060606}
+.featured-grid,.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:28px;
+}
+.feature-card,.card,.part-card,.tech-box,.contact-card{
+  background:linear-gradient(160deg,rgba(212,175,55,.12),rgba(0,0,0,.96));
+  border:1px solid rgba(212,175,55,.45);
+  box-shadow:0 0 24px rgba(212,175,55,.08);
+}
+.feature-card{
+  min-height:300px;
+  display:flex;
+  gap:18px;
+  align-items:center;
+  padding:18px;
+}
+.feature-card img{
+  width:50%;
+  height:235px;
+  object-fit:cover;
+  border-radius:12px;
+  cursor:pointer;
+}
+.feature-card h3,.card h3,.part-card h3{text-transform:uppercase}
+.feature-card p,.price{
+  color:var(--gold);
+  font-weight:900;
+}
+.benefits{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  border-top:1px solid rgba(212,175,55,.35);
+  border-bottom:1px solid rgba(212,175,55,.35);
+}
+.benefit{
+  text-align:center;
+  padding:46px 24px;
+  background:radial-gradient(circle at top,rgba(212,175,55,.14),transparent 45%),#050505;
+  border-right:1px solid rgba(212,175,55,.2);
+}
+.benefit h3{color:var(--gold)}
+.benefit p{color:#d6d6d6}
+.about,.tech,.custom-order,.parts-section,.contact-section{
+  padding:70px 7%;
+  text-align:center;
+}
+.about p,.tech>p,.custom-box p,.parts-intro{
+  max-width:960px;
+  margin:auto;
+  color:#ddd;
+  font-size:18px;
+  line-height:1.8;
+}
+.branding{padding:45px 5%}
+.branding-grid,.process-gallery,.tech-boxes,.parts-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
+}
+.branding-grid img,.process-gallery img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  border-radius:14px;
+  border:1px solid rgba(212,175,55,.55);
+  cursor:pointer;
+}
+.tech-box{
+  padding:26px;
+  border-radius:14px;
+}
+.tech-box h3{color:var(--gold)}
+.custom-order{
+  background:
+    linear-gradient(rgba(0,0,0,.86),rgba(0,0,0,.95)),
+    url("ASSETS/process/process2.jpg");
+  background-size:cover;
+  background-position:center;
+  border-top:1px solid rgba(212,175,55,.35);
+  border-bottom:1px solid rgba(212,175,55,.35);
+}
+.custom-box{
+  max-width:1000px;
+  margin:auto;
+  padding:38px;
+  border:1px solid rgba(212,175,55,.55);
+  background:rgba(0,0,0,.72);
+}
+.custom-design-area{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:28px;
+  margin-top:34px;
+  align-items:center;
+}
+.custom-deck-preview{
+  width:210px;
+  height:520px;
+  border-radius:105px;
+  border:2px solid rgba(212,175,55,.7);
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#070707;
+}
+.custom-deck-preview img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:none;
+}
+.question-mark{
+  font-family:'Cinzel',serif;
+  color:var(--gold);
+  font-size:150px;
+}
+.custom-controls{text-align:left}
+.custom-controls strong{
+  color:var(--gold);
+  font-size:32px;
+  display:block;
+  margin:12px 0 18px;
+}
+.upload-label{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  color:black;
+  font-weight:900;
+  padding:13px 22px;
+  cursor:pointer;
+  text-transform:uppercase;
+  font-family:'Cinzel',serif;
+}
+#customUpload{display:none}
+#customIdea{
+  width:100%;
+  min-height:130px;
+  margin:14px 0;
+  background:#070707;
+  color:white;
+  border:1px solid rgba(212,175,55,.6);
+  padding:14px;
+}
+.parts-section{
+  background:radial-gradient(circle at top,rgba(212,175,55,.11),transparent 45%),#050505;
+  border-top:1px solid rgba(212,175,55,.35);
+  border-bottom:1px solid rgba(212,175,55,.35);
+}
+.parts-grid{max-width:1300px;margin:35px auto 0}
+.part-card{padding:18px;text-align:center}
+.part-card img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  border-radius:12px;
+  background:#090909;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(212,175,55,.22);
+}
+.part-card p{
+  color:#cfcfcf;
+  font-size:14px;
+  min-height:58px;
+  line-height:1.45;
+}
+.price{font-size:24px;margin:14px 0}
+.buy-btn{
+  width:100%;
+  padding:12px 18px;
+}
+.filters{text-align:center;padding:10px 5% 28px}
+.filters button{
+  margin:6px;
+  padding:11px 18px;
+  background:#111;
+  color:white;
+  border:1px solid var(--gold);
+  cursor:pointer;
+}
+.filters button:hover{background:var(--gold);color:#000}
+.card{
+  padding:16px;
+  text-align:center;
+  transition:.25s;
+}
+.card:hover,.part-card:hover,.feature-card:hover{
+  transform:translateY(-4px);
+  border-color:var(--gold);
+  box-shadow:0 0 28px rgba(212,175,55,.36);
+}
+.card img{
+  width:100%;
+  height:185px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+}
+.product-note,.option-info{
+  color:#cfcfcf;
+  font-size:13px;
+  line-height:1.35;
+}
+.option-select{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  background:#070707;
+  color:white;
+  border:1px solid rgba(212,175,55,.6);
+}
+.contact-section{
+  background:radial-gradient(circle at top,rgba(212,175,55,.12),transparent 42%),#030303;
+}
+.contact-wrap{
+  max-width:1150px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:28px;
+}
+.contact-card{
+  padding:30px;
+  text-align:left;
+}
+.contact-card h3{color:var(--gold)}
+.contact-row{
+  border-bottom:1px solid rgba(212,175,55,.18);
+  padding:14px 0;
+}
+.contact-row strong{display:block;color:var(--gold)}
+.contact-form input,.contact-form textarea{
+  width:100%;
+  margin:8px 0;
+  padding:14px;
+  background:#050505;
+  color:white;
+  border:1px solid rgba(212,175,55,.6);
+}
+.contact-form textarea{min-height:120px}
+.modal{
+  display:none;
+  position:fixed;
+  z-index:300;
+  inset:0;
+  background:rgba(0,0,0,.94);
+  align-items:center;
+  justify-content:center;
+}
+.modal img{
+  max-width:92%;
+  max-height:90%;
+  border:2px solid var(--gold);
+}
+.close{
+  position:absolute;
+  top:22px;
+  right:34px;
+  font-size:42px;
+  cursor:pointer;
+}
+footer{
+  padding:42px 7%;
+  border-top:1px solid rgba(212,175,55,.25);
+  background:#030303;
+  color:#bbb;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:24px;
+}
 footer h3{color:var(--gold)}
-footer a{color:#bbb;text-decoration:none}
-footer a:hover{color:var(--gold)}
-@media(max-width:800px){header{justify-content:center}.hero h1{font-size:48px}.hero{min-height:60vh;text-align:center}.section-title{font-size:32px}.grid{grid-template-columns:1fr}}
-</style></head><body>
+
+@media(max-width:850px){
+  header{padding:14px 18px;flex-direction:column}
+  .logo img{height:58px}
+  nav{gap:13px}
+  nav a{font-size:13px}
+  .hero{min-height:72vh;padding:55px 7%}
+  .hero h1{font-size:54px}
+  .section-title{font-size:34px}
+  .feature-card{flex-direction:column}
+  .feature-card img{width:100%}
+  .custom-box{padding:24px}
+}
+</style>
+
+<script>
+function imgFallback(img, paths){
+  if(!img.dataset.tryIndex){ img.dataset.tryIndex="0"; }
+  let i=parseInt(img.dataset.tryIndex,10);
+  if(i>=paths.length) return;
+  img.dataset.tryIndex=String(i+1);
+  img.src=paths[i];
+}
+</script>
+</head>
+
+<body>
+
 <header>
-  <a class="logo" href="index.html">GLOBAL <span>DECKS SS</span></a>
+  <a class="logo" href="index.html#home"><img src="ASSETS/logo/logo.jpg" onerror="imgFallback(this,['ASSETS/logo/logo.png'])" alt="Global Decks SS logo"></a>
   <nav>
-    <a href="index.html">Sākums</a>
-    <a href="shop.html">Veikals</a>
-    <a href="parts.html">Daļas</a>
-    <a href="about.html">Par mani</a>
+    <a href="index.html#home" data-lv="Sākums" data-en="Home">Sākums</a>
+    <a href="index.html#featured" data-lv="Izvēlētie" data-en="Featured">Izvēlētie</a>
+    <a href="index.html#technology" data-lv="Tehnoloģija" data-en="Technology">Tehnoloģija</a>
+    <a href="index.html#custom" data-lv="Custom" data-en="Custom">Custom</a>
+    <a href="index.html#parts" data-lv="Daļas" data-en="Parts">Daļas</a>
+    <a href="index.html#shop" data-lv="Veikals" data-en="Shop">Veikals</a>
+    <a href="about.html" data-lv="Par mani" data-en="About me">Par mani</a>
+    <a href="index.html#contact" data-lv="Kontakti" data-en="Contact">Kontakti</a>
   </nav>
+  <button class="lang" onclick="changeLang()">EN</button>
 </header>
 
-<section class="hero"><div><h1>GLOBAL <span>DECKS</span></h1><p>Brauc savā stilā. Premium skate dizaini, dēļi un komplektējošās daļas vienotā melna/zelta street style noskaņā.</p><a class="btn" href="shop.html">Skatīt veikalu →</a></div></section>
-<section class="section"><h2 class="section-title">Par <span>projektu</span></h2><p class="intro">GLOBAL DECKS SS ir vienotas tēmas mājaslapa par skateboard dēļiem, dizainu un rezerves daļām. Projekta mērķis ir parādīt produktu kolekciju pārskatāmā, modernā un vizuāli pievilcīgā veidā.</p><div class="grid">
-<div class="card"><img src="ASSETS/branding/boardback.jpg" alt="Premium deck"><h3>Premium dizains</h3><p>Vienots melna, zelta un street style vizuālais tēls.</p></div>
-<div class="card"><img src="ASSETS/parts/wheels1.jpg" alt="Wheels"><h3>Daļas</h3><p>Riteņi, trucki, gultņi, griptape un skrūves.</p></div>
-<div class="card"><img src="BOARDS/flag/latvia.jpg" alt="Latvia deck"><h3>Veikals</h3><p>Dēļu un detaļu katalogs ar cenām un WhatsApp pasūtīšanu.</p></div>
-</div></section>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>GLOBAL <span>DECKS</span></h1>
+    <h2 data-lv="Brauc <span>savā</span> stilā" data-en="Ride <span>your</span> style">Brauc <span>savā</span> stilā</h2>
+    <p data-lv="Unikāli skeita dēļi ar spēcīgu dizainu, tumšu ielas stilu un premium noskaņu."
+       data-en="Unique skateboard decks with strong design, dark street style and premium vibe.">Unikāli skeita dēļi ar spēcīgu dizainu, tumšu ielas stilu un premium noskaņu.</p>
+    <a href="#shop" class="btn" data-lv="Skatīt dēļus →" data-en="Shop now →">Skatīt dēļus →</a>
+  </div>
+</section>
+
+<section class="featured" id="featured">
+  <h2 class="section-title" data-lv="Izvēlētie <span>dēļi</span>" data-en="Featured <span>decks</span>">Izvēlētie <span>dēļi</span></h2>
+  <div class="featured-grid" id="featuredGrid"></div>
+</section>
+
+<section class="benefits">
+  <div class="benefit"><h3 data-lv="Ātra piegāde" data-en="Fast shipping">Ātra piegāde</h3><p data-lv="Ātra piegāde Eiropā." data-en="Fast delivery in Europe.">Ātra piegāde Eiropā.</p></div>
+  <div class="benefit"><h3 data-lv="Premium kvalitāte" data-en="Premium quality">Premium kvalitāte</h3><p data-lv="Izturīgi materiāli." data-en="Durable materials.">Izturīgi materiāli.</p></div>
+  <div class="benefit"><h3 data-lv="Unikāli dizaini" data-en="Unique designs">Unikāli dizaini</h3><p data-lv="Katram dēlim savs stils." data-en="Every deck has its own style.">Katram dēlim savs stils.</p></div>
+  <div class="benefit"><h3 data-lv="Droša pasūtīšana" data-en="Secure order">Droša pasūtīšana</h3><p data-lv="Vienkārši un droši." data-en="Simple and safe.">Vienkārši un droši.</p></div>
+</section>
+
+<section class="about">
+  <h2 class="section-title" data-lv="Par <span>Global Decks SS</span>" data-en="About <span>Global Decks SS</span>">Par <span>Global Decks SS</span></h2>
+  <p data-lv="Global Decks SS ir skeita dēļu kolekcija cilvēkiem, kuri grib izcelties. Katra tēma ir veidota ar savu raksturu — pilsētas, dzīvnieki, spēles, graffiti, horror, mūzika, style un vibe kolekcijas."
+     data-en="Global Decks SS is a skateboard deck collection for people who want to stand out. Each theme has its own character — cities, animals, games, graffiti, horror, music, style and vibe collections.">Global Decks SS ir skeita dēļu kolekcija cilvēkiem, kuri grib izcelties. Katra tēma ir veidota ar savu raksturu — pilsētas, dzīvnieki, spēles, graffiti, horror, mūzika, style un vibe kolekcijas.</p>
+</section>
+
+<section class="branding">
+  <h2 class="section-title" data-lv="Premium <span>SS kolekcija</span>" data-en="Premium <span>SS collection</span>">Premium <span>SS kolekcija</span></h2>
+  <div class="branding-grid">
+    <img src="ASSETS/branding/boardback.jpg" onerror="imgFallback(this,['ASSETS/branding/boardback.png'])" onclick="openImg(this.src)">
+    <img src="ASSETS/branding/boardfront.jpg" onerror="imgFallback(this,['ASSETS/branding/boardfront.png'])" onclick="openImg(this.src)">
+    <img src="ASSETS/branding/boardside.jpg" onerror="imgFallback(this,['ASSETS/branding/boardside.png'])" onclick="openImg(this.src)">
+  </div>
+</section>
+
+<section class="tech" id="technology">
+  <h2 class="section-title" data-lv="Kā tiek <span>veidoti dēļi</span>" data-en="How our <span>decks are made</span>">Kā tiek <span>veidoti dēļi</span></h2>
+  <p data-lv="Dizains tiek sagatavots digitāli augstā izšķirtspējā, pēc tam precīzi pārnests uz dēļa virsmas ar profesionālu druku vai krāsošanas tehnoloģiju. Lai grafika būtu noturīga pret nodilumu, mitrumu un skrāpējumiem, virsma tiek pārklāta ar vairākām aizsarglakas kārtām — līdz pat 7 kārtām. Tas palīdz saglabāt krāsu dziļumu, spīdumu un premium kvalitātes izskatu ilgtermiņā."
+     data-en="The design is created digitally in high resolution and then precisely transferred onto the deck surface using professional printing or painting technology. To ensure durability against wear, moisture, and scratches, the surface is coated with multiple protective lacquer layers — up to 7 coats. This helps preserve color depth, shine, and a premium-quality appearance over time.">Dizains tiek sagatavots digitāli augstā izšķirtspējā, pēc tam precīzi pārnests uz dēļa virsmas ar profesionālu druku vai krāsošanas tehnoloģiju. Lai grafika būtu noturīga pret nodilumu, mitrumu un skrāpējumiem, virsma tiek pārklāta ar vairākām aizsarglakas kārtām — līdz pat 7 kārtām. Tas palīdz saglabāt krāsu dziļumu, spīdumu un premium kvalitātes izskatu ilgtermiņā.</p>
+
+  <div class="process-gallery">
+    <img src="ASSETS/process/process1.jpg" onerror="imgFallback(this,['ASSETS/process/process1.png'])" onclick="openImg(this.src)">
+    <img src="ASSETS/process/process2.jpg" onerror="imgFallback(this,['ASSETS/process/process2.png'])" onclick="openImg(this.src)">
+  </div>
+
+  <div class="tech-boxes">
+    <div class="tech-box"><h3 data-lv="1. Dizains" data-en="1. Design">1. Dizains</h3><p data-lv="Digitāls makets tiek sagatavots augstā izšķirtspējā un pielāgots dēļa formai." data-en="The digital artwork is prepared in high resolution and adjusted to the deck shape.">Digitāls makets tiek sagatavots augstā izšķirtspējā un pielāgots dēļa formai.</p></div>
+    <div class="tech-box"><h3 data-lv="2. Druka / krāsošana" data-en="2. Print / paint">2. Druka / krāsošana</h3><p data-lv="Grafika tiek precīzi pārnesta uz dēļa virsmas ar profesionālu tehnoloģiju." data-en="The artwork is precisely transferred onto the deck surface using professional technology.">Grafika tiek precīzi pārnesta uz dēļa virsmas ar profesionālu tehnoloģiju.</p></div>
+    <div class="tech-box"><h3 data-lv="3. Aizsarglaka" data-en="3. Protective lacquer">3. Aizsarglaka</h3><p data-lv="Virsma tiek pārklāta ar vairākām aizsarglakas kārtām — līdz pat 7 kārtām." data-en="The surface is coated with multiple protective lacquer layers — up to 7 coats.">Virsma tiek pārklāta ar vairākām aizsarglakas kārtām — līdz pat 7 kārtām.</p></div>
+    <div class="tech-box"><h3 data-lv="4. Gatavs" data-en="4. Ready">4. Gatavs</h3><p data-lv="Dēlis iegūst noturīgu grafiku, dziļas krāsas un premium kvalitātes izskatu." data-en="The deck gets durable artwork, deep colors, and a premium-quality finish.">Dēlis iegūst noturīgu grafiku, dziļas krāsas un premium kvalitātes izskatu.</p></div>
+  </div>
+</section>
+
+<section class="custom-order" id="custom">
+  <div class="custom-box">
+    <h2 class="section-title" data-lv="Izveido <span>savu custom dēli</span>" data-en="Create <span>your custom deck</span>">Izveido <span>savu custom dēli</span></h2>
+    <p data-lv="Custom dizains ir atsevišķs pasūtījums. Tu vari augšupielādēt savu bildi, logo vai ideju un apskatīties aptuvenu priekšskatījumu, kā tas varētu izskatīties uz dēļa."
+       data-en="Custom design is a separate order. You can upload your own image, logo or idea and preview how it could look on a deck.">Custom dizains ir atsevišķs pasūtījums. Tu vari augšupielādēt savu bildi, logo vai ideju un apskatīties aptuvenu priekšskatījumu, kā tas varētu izskatīties uz dēļa.</p>
+
+    <div class="custom-design-area">
+      <div>
+        <div class="custom-deck-preview">
+          <div class="question-mark" id="questionMark">?</div>
+          <img id="customImagePreview" alt="Custom preview">
+        </div>
+        <p style="color:#bbb" data-lv="Šis ir tikai vizuāls priekšskatījums, ne gala makets." data-en="This is only a visual preview, not the final print file.">Šis ir tikai vizuāls priekšskatījums, ne gala makets.</p>
+      </div>
+      <div class="custom-controls">
+        <h3 data-lv="Custom dizains" data-en="Custom design">Custom dizains</h3>
+        <strong data-lv="no €179" data-en="from €179">no €179</strong>
+        <label class="upload-label" for="customUpload" data-lv="Pievieno savu bildi" data-en="Upload your image">Pievieno savu bildi</label>
+        <input type="file" id="customUpload" accept="image/*" onchange="previewCustomImage(event)">
+        <textarea id="customIdea" placeholder="Apraksti savu ideju..." data-placeholder-lv="Apraksti savu ideju..." data-placeholder-en="Describe your idea..."></textarea>
+        <button class="btn" onclick="customOrder()" data-lv="Pasūtīt custom WhatsApp →" data-en="Order custom on WhatsApp →">Pasūtīt custom WhatsApp →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="parts-section" id="parts">
+  <h2 class="section-title" data-lv="Komplektējošās <span>daļas</span>" data-en="Skateboard <span>parts</span>">Komplektējošās <span>daļas</span></h2>
+  <p class="parts-intro" data-lv="Šeit var pasūtīt atsevišķas skeita komplektējošās daļas — riteņus, truckus, gultņus, griptape un skrūves."
+     data-en="Here you can order separate skateboard parts — wheels, trucks, bearings, griptape and screws.">Šeit var pasūtīt atsevišķas skeita komplektējošās daļas — riteņus, truckus, gultņus, griptape un skrūves.</p>
+  <div class="parts-grid" id="partsGrid"></div>
+</section>
+
+<section class="shop-section" id="shop">
+  <h2 class="section-title" data-lv="Visi <span>dēļi</span>" data-en="All <span>decks</span>">Visi <span>dēļi</span></h2>
+  <div class="filters" id="filters"></div>
+  <div class="products" id="products"></div>
+</section>
+
+<div class="modal" id="modal" onclick="closeImg()">
+  <span class="close">×</span>
+  <img id="bigImg">
+</div>
+
+<section class="contact-section" id="contact">
+  <h2 class="section-title" data-lv="Kontakti <span>un pasūtījumi</span>" data-en="Contact <span>and orders</span>">Kontakti <span>un pasūtījumi</span></h2>
+  <div class="contact-wrap">
+    <div class="contact-card">
+      <h3 data-lv="Sazinies ar mums" data-en="Contact us">Sazinies ar mums</h3>
+      <p data-lv="Ja vēlies pasūtīt dēli, pilnu komplektu, detaļas vai custom dizainu, visērtāk raksti WhatsApp."
+         data-en="If you want to order a deck, complete setup, parts or a custom design, the easiest way is to write on WhatsApp.">Ja vēlies pasūtīt dēli, pilnu komplektu, detaļas vai custom dizainu, visērtāk raksti WhatsApp.</p>
+      <div class="contact-row"><strong>WhatsApp</strong><span>+371 29712885</span></div>
+      <div class="contact-row"><strong>E-mail</strong><span>info@globaldecks.com</span></div>
+    </div>
+    <div class="contact-card">
+      <h3 data-lv="Ātra ziņa" data-en="Quick message">Ātra ziņa</h3>
+      <div class="contact-form">
+        <input id="contactName" placeholder="Tavs vārds" data-placeholder-lv="Tavs vārds" data-placeholder-en="Your name">
+        <input id="contactCountry" placeholder="Valsts / pilsēta" data-placeholder-lv="Valsts / pilsēta" data-placeholder-en="Country / city">
+        <textarea id="contactMessage" placeholder="Ko vēlies pasūtīt vai pajautāt?" data-placeholder-lv="Ko vēlies pasūtīt vai pajautāt?" data-placeholder-en="What would you like to order or ask?"></textarea>
+        <button class="btn" onclick="sendContactMessage()" data-lv="Sūtīt WhatsApp →" data-en="Send WhatsApp →">Sūtīt WhatsApp →</button>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="footer-grid">
-    <div><h2>GLOBAL <span style="color:#d4af37">DECKS</span></h2><p>Premium skateboard dizaini un komplektējošās daļas.</p></div>
-    <div><h3>Navigācija</h3><p><a href="index.html">Sākums</a><br><a href="shop.html">Veikals</a><br><a href="parts.html">Daļas</a><br><a href="about.html">Par mani</a></p></div>
-    <div><h3>Kontakti</h3><p>WhatsApp: +371 29712885<br>E-mail: info@globaldecks.com</p></div>
+    <div><h2>GLOBAL <span style="color:#d4af37">DECKS</span></h2><p data-lv="Premium skeita dēļu dizaini." data-en="Premium skateboard deck designs.">Premium skeita dēļu dizaini.</p></div>
+    <div><h3 data-lv="Veikals" data-en="Shop">Veikals</h3><p>Decks<br>Parts<br>Custom</p></div>
+    <div><h3 data-lv="Kontakti" data-en="Contact">Kontakti</h3><p>info@globaldecks.com<br>WhatsApp<br><a style="color:#bbb" href="about.html">Par mani / atsauces</a></p></div>
   </div>
 </footer>
 
 <script>
+let currentLang="lv";
 const whatsappPhone="37129712885";
-function buyDirect(name, optionName, price){
-  const text=`Sveiki! Vēlos pasūtīt: ${name}. Variants: ${optionName}. Cena: ${price}.`;
+
+const options={
+  deck:{lv:"Tikai dēlis",en:"Deck only",price:"€189",infoLv:"Tu saņem dēli ar šo dizainu. Bez riteņiem un truckiem.",infoEn:"You receive the deck with this design. No wheels or trucks included."},
+  full:{lv:"Pilns komplekts",en:"Complete setup",price:"€289",infoLv:"Gatavs skeits: dēlis, trucki, riteņi un gultņi.",infoEn:"Ready skateboard: deck, trucks, wheels and bearings."}
+};
+
+const categories=[
+  ["all","Visi","All"],["animal","Dzīvnieki","Animals"],["car","Auto","Cars"],["cartoon","Multenes","Cartoons"],["flag","Karogi","Flags"],
+  ["games","Spēles","Games"],["grafiti","Grafiti","Graffiti"],["horror","Šausmu","Horror"],["monument","Pieminekļi","Monuments"],
+  ["music","Mūzika","Music"],["social","Sociālie","Social"],["style","Stils","Style"],["vibe","Noskaņa","Vibe"],["world","Pasaule","World"]
+];
+
+const decks=[
+["animal","BOARDS/animal/cat.jpg","cat"],["animal","BOARDS/animal/cat1.jpg","cat1"],["animal","BOARDS/animal/dog.jpg","dog"],["animal","BOARDS/animal/dog1.jpg","dog1"],["animal","BOARDS/animal/dog2.jpg","dog2"],["animal","BOARDS/animal/kobra.jpg","kobra"],["animal","BOARDS/animal/unicorn.jpg","unicorn"],
+["car","BOARDS/car/bugatti.jpg","bugatti"],["car","BOARDS/car/bugatti2.jpg","bugatti2"],["car","BOARDS/car/bugatti3.jpg","bugatti3"],
+["cartoon","BOARDS/cartoon/comic.jpg","comic"],["cartoon","BOARDS/cartoon/dog.jpg","dog"],["cartoon","BOARDS/cartoon/mushroom.jpg","mushroom"],["cartoon","BOARDS/cartoon/spanchbob.jpg","spanchbob"],
+["flag","BOARDS/flag/austria.jpg","Austria"],["flag","BOARDS/flag/belgium.jpg","Belgium"],["flag","BOARDS/flag/czech.jpg","Czech"],["flag","BOARDS/flag/estonia.jpg","Estonia"],["flag","BOARDS/flag/france.jpg","France"],["flag","BOARDS/flag/germany.jpg","Germany"],["flag","BOARDS/flag/horvatia.jpg","Horvatia"],["flag","BOARDS/flag/italy.jpg","Italy"],["flag","BOARDS/flag/latvia.jpg","Latvia"],["flag","BOARDS/flag/lithuania.jpg","Lithuania"],["flag","BOARDS/flag/luxemburg.jpg","Luxemburg"],["flag","BOARDS/flag/poland.jpg","Poland"],["flag","BOARDS/flag/portugal.jpg","Portugal"],["flag","BOARDS/flag/slovakia.jpg","Slovakia"],["flag","BOARDS/flag/slovenia.jpg","Slovenia"],["flag","BOARDS/flag/spain.jpg","Spain"],["flag","BOARDS/flag/switzerland.jpg","Switzerland"],
+["games","BOARDS/games/CS.jpg","CS"],["games","BOARDS/games/cyber.jpg","cyber"],["games","BOARDS/games/mario.jpg","mario"],
+["grafiti","BOARDS/grafiti/graf.jpg","graf"],["grafiti","BOARDS/grafiti/graf1.jpg","graf1"],["grafiti","BOARDS/grafiti/graf2.jpg","graf2"],["grafiti","BOARDS/grafiti/graf3.jpg","graf3"],
+["horror","BOARDS/horror/catacomb.jpg","catacomb"],["horror","BOARDS/horror/MURON.jpg","MURON"],["horror","BOARDS/horror/MURON2.jpg","MURON2"],["horror","BOARDS/horror/MURON3.jpg","MURON3"],["horror","BOARDS/horror/pennywise.jpg","pennywise"],["horror","BOARDS/horror/pennywise2.jpg","pennywise2"],["horror","BOARDS/horror/saw.jpg","saw"],
+["monument","BOARDS/monument/milda.jpg","milda"],["monument","BOARDS/monument/wtc.jpg","wtc"],
+["music","BOARDS/music/prodigy.jpg","prodigy"],
+["social","BOARDS/social/snapchat.jpg","snapchat"],["social","BOARDS/social/tiktok.jpg","tiktok"],
+["style","BOARDS/style/altushka.jpg","altushka"],["style","BOARDS/style/ALTUSHKA2.jpg","ALTUSHKA2"],["style","BOARDS/style/ALTUSHKA3.jpg","ALTUSHKA3"],["style","BOARDS/style/ALTUSHKA4.jpg","ALTUSHKA4"],["style","BOARDS/style/punk.jpg","punk"],
+["vibe","BOARDS/vibe/67.jpg","67"],["vibe","BOARDS/vibe/67color.jpg","67color"],["vibe","BOARDS/vibe/disneyland.jpg","disneyland"],["vibe","BOARDS/vibe/florence.jpg","florence"],["vibe","BOARDS/vibe/mcdonald.jpg","mcdonald"],["vibe","BOARDS/vibe/serfing.jpg","serfing"],["vibe","BOARDS/vibe/skateborder.jpg","skateborder"],["vibe","BOARDS/vibe/wave.jpg","wave"],
+["world","BOARDS/world/agdama.jpg","agdama"],["world","BOARDS/world/alps.jpg","alps"],["world","BOARDS/world/barcelona.jpg","barcelona"],["world","BOARDS/world/bejing.jpg","bejing"],["world","BOARDS/world/berlin.jpg","berlin"],["world","BOARDS/world/canbera.jpg","canbera"],["world","BOARDS/world/cdmx.jpg","cdmx"],["world","BOARDS/world/dubai.jpg","dubai"],["world","BOARDS/world/dublin.jpg","dublin"],["world","BOARDS/world/lasvegas.jpg","lasvegas"],["world","BOARDS/world/london.jpg","london"],["world","BOARDS/world/miami.jpg","miami"],["world","BOARDS/world/moscov.jpg","moscov"],["world","BOARDS/world/newyork.jpg","newyork"],["world","BOARDS/world/paris.jpg","paris"],["world","BOARDS/world/planets.jpg","planets"],["world","BOARDS/world/pripyat.jpg","pripyat"],["world","BOARDS/world/riga.jpg","riga"],["world","BOARDS/world/rio.jpg","rio"],["world","BOARDS/world/roma.jpg","roma"],["world","BOARDS/world/saopaulo.jpg","saopaulo"],["world","BOARDS/world/sardegna.jpg","sardegna"],["world","BOARDS/world/sydney.jpg","sydney"],["world","BOARDS/world/tibet.jpg","tibet"],["world","BOARDS/world/tokyo.jpg","tokyo"],["world","BOARDS/world/varosha.jpg","varosha"],["world","BOARDS/world/wellington.jpg","wellington"]
+];
+
+const parts=[
+  ["ASSETS/parts/wheels1.jpg","F1","€110","Premium F1 style riteņi ar sportisku dizainu."],
+  ["ASSETS/parts/wheels2.jpg","PZERO","€110","PZERO style premium riteņi."],
+  ["ASSETS/parts/wheels3.jpg","NO LIMIT","€110","Krāsaini NO LIMIT riteņi."],
+  ["ASSETS/parts/wheels4.jpg","NO LIMIT X","€110","NO LIMIT X dizaina riteņi."],
+  ["ASSETS/parts/wheels5.jpg","RACE","€120","Race style premium riteņi."],
+  ["ASSETS/parts/wheels6.jpg","CUSTOM RACE","€120","Custom Race dizaina riteņi."],
+  ["ASSETS/parts/wheels7.jpg","HELLO KITTY","€99","Hello Kitty dizaina riteņi."],
+  ["ASSETS/parts/wheels8.jpg","WARZONE","€59","Warzone style riteņi."],
+  ["ASSETS/parts/trucks.jpg","TRUCKI","€89","Izturīgi trucki stabilai braukšanai."],
+  ["ASSETS/parts/bearings.jpg","GULTŅI","€29","Premium bearings ātrai un gludai braukšanai."],
+  ["ASSETS/parts/griptape.jpg","GRIPTAPE","€19","Saķeres pārklājums dēļa augšai."],
+  ["ASSETS/parts/screws.jpg","SKRŪVES","€9","Skrūvju komplekts trucku piestiprināšanai."]
+];
+
+function fallbackPath(path){
+  const list=[];
+  if(path.endsWith(".jpg")) list.push(path.replace(".jpg",".png"));
+  if(path.endsWith(".png")) list.push(path.replace(".png",".jpg"));
+  list.push(path.replace(/\/([A-Z])/g,(m,p)=>"/"+p.toLowerCase()));
+  return list;
+}
+
+function imgTag(src, alt){
+  return `<img src="${src}" onerror="imgFallback(this, ${JSON.stringify(fallbackPath(src)).replace(/"/g,"&quot;")})" onclick="openImg(this.src)" alt="${alt}">`;
+}
+
+function renderFeatured(){
+  const featured=[decks.find(d=>d[2].toLowerCase()==="cyber"),decks.find(d=>d[2].toLowerCase()==="snapchat"),decks.find(d=>d[2].toLowerCase()==="cat"),decks.find(d=>d[2].toLowerCase()==="graf")].filter(Boolean);
+  document.getElementById("featuredGrid").innerHTML=featured.map(d=>`
+    <div class="feature-card">
+      ${imgTag(d[1],d[2])}
+      <div>
+        <h3>${d[2]}</h3>
+        <p>${options.deck.price}</p>
+        <small>${currentLang==="lv"?"Attēlā redzams dizains. Cena: tikai dēlis.":"Image shows the design. Price: deck only."}</small>
+        <button class="buy-btn" onclick="buyDirect('${d[2]}','${currentLang==="lv"?"Tikai dēlis":"Deck only"}','${options.deck.price}')">${currentLang==="lv"?"PIRKT":"BUY"}</button>
+      </div>
+    </div>`).join("");
+}
+
+function renderParts(){
+  document.getElementById("partsGrid").innerHTML=parts.map(p=>`
+    <div class="part-card">
+      ${imgTag(p[0],p[1])}
+      <h3>${p[1]}</h3>
+      <p>${p[3]}</p>
+      <div class="price">${p[2]}</div>
+      <button class="buy-btn" onclick="buyDirect('${p[1]}','${currentLang==="lv"?"Daļas":"Parts"}','${p[2]}')">${currentLang==="lv"?"PIRKT":"BUY"}</button>
+    </div>`).join("");
+}
+
+function renderFilters(){
+  document.getElementById("filters").innerHTML=categories.map(c=>`<button onclick="filterDecks('${c[0]}')" data-lv="${c[1]}" data-en="${c[2]}">${currentLang==="lv"?c[1]:c[2]}</button>`).join("");
+}
+
+function renderDecks(){
+  const buyText=currentLang==="lv"?"PIRKT":"BUY";
+  const note=currentLang==="lv"?"Attēlā redzams dizains. Zemāk izvēlies, ko tieši pasūti.":"Image shows the design. Choose exactly what you want to order below.";
+  document.getElementById("products").innerHTML=decks.map((d,i)=>`
+    <div class="card ${d[0]}">
+      ${imgTag(d[1],d[2])}
+      <h3>${d[2]}</h3>
+      <div class="product-note">${note}</div>
+      <select class="option-select" id="option-${i}" onchange="updatePrice(${i})">
+        <option value="deck">${currentLang==="lv"?options.deck.lv:options.deck.en} — ${options.deck.price}</option>
+        <option value="full">${currentLang==="lv"?options.full.lv:options.full.en} — ${options.full.price}</option>
+      </select>
+      <div class="option-info" id="info-${i}">${currentLang==="lv"?options.deck.infoLv:options.deck.infoEn}</div>
+      <div class="price" id="price-${i}">${options.deck.price}</div>
+      <button class="buy-btn" onclick="buyDeck('${d[2]}',${i})">${buyText}</button>
+    </div>`).join("");
+}
+
+function updatePrice(i){
+  const selected=document.getElementById(`option-${i}`).value;
+  document.getElementById(`price-${i}`).innerText=options[selected].price;
+  document.getElementById(`info-${i}`).innerText=currentLang==="lv"?options[selected].infoLv:options[selected].infoEn;
+}
+
+function buyDeck(name,i){
+  const selected=document.getElementById(`option-${i}`).value;
+  const optionName=currentLang==="lv"?options[selected].lv:options[selected].en;
+  const price=options[selected].price;
+  buyDirect(name,optionName,price);
+}
+
+function buyDirect(name,optionName,price){
+  const text=currentLang==="lv"
+    ?`Sveiki! Vēlos pasūtīt: ${name}. Variants: ${optionName}. Cena: ${price}.`
+    :`Hello! I would like to order: ${name}. Option: ${optionName}. Price: ${price}.`;
   window.open(`https://wa.me/${whatsappPhone}?text=${encodeURIComponent(text)}`,"_blank");
 }
+
+function previewCustomImage(event){
+  const file=event.target.files[0]; if(!file) return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    document.getElementById("customImagePreview").src=e.target.result;
+    document.getElementById("customImagePreview").style.display="block";
+    document.getElementById("questionMark").style.display="none";
+  };
+  reader.readAsDataURL(file);
+}
+
+function customOrder(){
+  const idea=document.getElementById("customIdea").value.trim();
+  const text=currentLang==="lv"
+    ?`Sveiki! Vēlos pasūtīt custom skeita dēļa dizainu. Cena: no €179. Ideja: ${idea||"vēlos apspriest WhatsApp."}`
+    :`Hello! I would like to order a custom skateboard deck design. Price: from €179. Idea: ${idea||"I want to discuss it on WhatsApp."}`;
+  window.open(`https://wa.me/${whatsappPhone}?text=${encodeURIComponent(text)}`,"_blank");
+}
+
+function sendContactMessage(){
+  const name=document.getElementById("contactName").value.trim();
+  const country=document.getElementById("contactCountry").value.trim();
+  const message=document.getElementById("contactMessage").value.trim();
+  const text=currentLang==="lv"
+    ?`Sveiki! Mani sauc ${name||"-"}. Valsts/pilsēta: ${country||"-"}. Ziņa: ${message||"Vēlos sazināties par pasūtījumu."}`
+    :`Hello! My name is ${name||"-"}. Country/city: ${country||"-"}. Message: ${message||"I would like to contact you about an order."}`;
+  window.open(`https://wa.me/${whatsappPhone}?text=${encodeURIComponent(text)}`,"_blank");
+}
+
+function changeLang(){
+  currentLang=currentLang==="lv"?"en":"lv";
+  document.querySelector(".lang").innerText=currentLang==="lv"?"EN":"LV";
+  document.querySelectorAll("[data-lv]").forEach(el=>el.innerHTML=currentLang==="lv"?el.dataset.lv:el.dataset.en);
+  document.querySelectorAll("[data-placeholder-lv]").forEach(el=>el.placeholder=currentLang==="lv"?el.dataset.placeholderLv:el.dataset.placeholderEn);
+  renderFeatured(); renderParts(); renderFilters(); renderDecks();
+}
+
+function openImg(src){
+  document.getElementById("modal").style.display="flex";
+  document.getElementById("bigImg").src=src;
+}
+function closeImg(){document.getElementById("modal").style.display="none";}
+function filterDecks(category){
+  document.querySelectorAll(".card").forEach(card=>{
+    card.style.display=(category==="all"||card.classList.contains(category))?"block":"none";
+  });
+}
+
+renderFeatured();
+renderParts();
+renderFilters();
+renderDecks();
 </script>
-</body></html>
+
+</body>
+</html>

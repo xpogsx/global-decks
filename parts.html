@@ -1,69 +1,443 @@
-<!DOCTYPE html><html lang="lv"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>GLOBAL DECKS SS - Daļas</title><style>
+<!DOCTYPE html>
+<html lang="lv">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>GLOBAL DECKS SS - Daļas</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;700;900&display=swap');
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#050505;color:white;font-family:Arial,sans-serif}
-:root{--gold:#d4af37;--dark:#050505}
-header{position:sticky;top:0;z-index:10;background:#000;border-bottom:1px solid rgba(212,175,55,.6);padding:18px 7%;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.logo{color:white;text-decoration:none;font-size:24px;font-weight:900;letter-spacing:1px}
-.logo span{color:var(--gold)}
-nav{display:flex;gap:18px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none;font-weight:900;text-transform:uppercase}
-nav a:hover{color:var(--gold)}
-.hero{min-height:75vh;background:linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.55)),url("ASSETS/branding/boardback.jpg");background-size:cover;background-position:center;display:flex;align-items:center;padding:70px 8%;border-bottom:1px solid rgba(212,175,55,.45)}
-.hero h1{font-size:80px;line-height:.9;margin:0;text-transform:uppercase;text-shadow:0 0 25px rgba(212,175,55,.35)}
-.hero h1 span{display:block;color:var(--gold)}
-.hero p{font-size:20px;color:#ddd;line-height:1.6;max-width:640px}
-.btn,.buy-btn{display:inline-block;background:linear-gradient(135deg,var(--gold),#8f6b16);color:black;border:none;padding:14px 26px;font-weight:900;text-decoration:none;text-transform:uppercase;cursor:pointer}
-.btn:hover,.buy-btn:hover{filter:brightness(1.15);box-shadow:0 0 25px rgba(212,175,55,.5)}
-.section{padding:70px 7%}
-.section-title{text-align:center;font-size:42px;text-transform:uppercase;margin:0 0 30px}
-.section-title span{color:var(--gold)}
-.intro{max-width:950px;margin:0 auto 35px;color:#ddd;text-align:center;font-size:18px;line-height:1.75}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:26px}
-.card,.info-box{background:linear-gradient(160deg,rgba(212,175,55,.12),rgba(0,0,0,.95));border:1px solid rgba(212,175,55,.5);padding:18px;text-align:center;box-shadow:0 0 24px rgba(212,175,55,.12)}
-.card{transition:.25s;overflow:hidden}
-.card:hover{transform:translateY(-6px);box-shadow:0 0 30px rgba(212,175,55,.4)}
-.card img{width:100%;height:200px;object-fit:cover;border-radius:12px;background:#090909}
-.card h3{text-transform:uppercase}
-.card p{color:#ccc;line-height:1.45;min-height:58px}
-.price{color:var(--gold);font-size:24px;font-weight:900;margin:14px 0}
-.buy-btn{width:100%}
-.info-box{max-width:1000px;margin:auto;text-align:left}
-.info-box p,.info-box li{color:#ddd;line-height:1.7;font-size:17px}
-.info-box strong{color:var(--gold)}
-.contact-row{padding:15px 0;border-bottom:1px solid rgba(212,175,55,.25)}
-.contact-row strong{display:block;color:var(--gold);text-transform:uppercase}
-.contact-row a{color:white}
-footer{background:#030303;border-top:1px solid rgba(212,175,55,.35);padding:40px 7%;color:#bbb}
-.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px}
-footer h3{color:var(--gold)}
-footer a{color:#bbb;text-decoration:none}
-footer a:hover{color:var(--gold)}
-@media(max-width:800px){header{justify-content:center}.hero h1{font-size:48px}.hero{min-height:60vh;text-align:center}.section-title{font-size:32px}.grid{grid-template-columns:1fr}}
-</style></head><body>
-<header>
-  <a class="logo" href="index.html">GLOBAL <span>DECKS SS</span></a>
-  <nav>
-    <a href="index.html">Sākums</a>
-    <a href="shop.html">Veikals</a>
-    <a href="parts.html">Daļas</a>
-    <a href="about.html">Par mani</a>
-  </nav>
-</header>
-<section class="section"><h1 class="section-title">Komplektējošās <span>daļas</span></h1><p class="intro">Šeit var pasūtīt atsevišķas skeita komplektējošās daļas — riteņus, truckus, gultņus, griptape un skrūves.</p><div class="grid"><div class="card"><img src="ASSETS/parts/wheels1.jpg" alt="F1"><h3>F1</h3><p>Premium F1 style riteņi ar sportisku dizainu.</p><div class="price">€110</div><button class="buy-btn" onclick="buyDirect('F1','Daļas','€110')">PIRKT</button></div><div class="card"><img src="ASSETS/parts/wheels2.jpg" alt="PZERO"><h3>PZERO</h3><p>PZERO style premium riteņi.</p><div class="price">€110</div><button class="buy-btn" onclick="buyDirect('PZERO','Daļas','€110')">PIRKT</button></div><div class="card"><img src="ASSETS/parts/wheels3.jpg" alt="NO LIMIT"><h3>NO LIMIT</h3><p>Krāsaini NO LIMIT riteņi.</p><div class="price">€110</div><button class="buy-btn" onclick="buyDirect('NO LIMIT','Daļas','€110')">PIRKT</button></div><div class="card"><img src="ASSETS/parts/wheels4.jpg" alt="NO LIMIT X"><h3>NO LIMIT X</h3><p>NO LIMIT X dizaina riteņi.</p><div class="price">€110</div><button class="buy-btn" onclick="buyDirect('NO LIMIT X','Daļas','€110')">PIRKT</button></div><div class="card"><img src="ASSETS/parts/wheels5.jpg" alt="RACE"><h3>RACE</h3><p>Race style premium riteņi.</p><div class="price">€120</div><button class="buy-btn" onclick="buyDirect('RACE','Daļas','€120')">PIRKT</button></div><div class="card"><img src="ASSETS/parts/wheels6.jpg" alt="CUSTOM RACE"><h3>CUSTOM RACE</h3><p>Custom Race dizaina riteņi.</p><div class="price">€120</div><button class="buy-btn" onclick="buyDirect('CUSTOM RACE','Daļas','€120')">PIRKT</button></div><div class="card"><img src="ASSETS/parts/wheels7.jpg" alt="HELLO KITTY"><h3>HELLO KITTY</h3><p>Hello Kitty dizaina riteņi.</p><div class="price">€99</div><button class="buy-btn" onclick="buyDirect('HELLO KITTY','Daļas','€99')">PIRKT</button></div><div class="card"><img src="ASSETS/parts/wheels8.jpg" alt="WARZONE"><h3>WARZONE</h3><p>Warzone style riteņi.</p><div class="price">€59</div><button class="buy-btn" onclick="buyDirect('WARZONE','Daļas','€59')">PIRKT</button></div><div class="card"><img src="ASSETS/parts/trucks.jpg" alt="TRUCKI"><h3>TRUCKI</h3><p>Izturīgi trucki stabilai braukšanai un labākai kontrolei.</p><div class="price">€89</div><button class="buy-btn" onclick="buyDirect('TRUCKI','Daļas','€89')">PIRKT</button></div><div class="card"><img src="ASSETS/parts/bearings.jpg" alt="GULTŅI"><h3>GULTŅI</h3><p>Premium bearings ātrai un gludai braukšanai.</p><div class="price">€29</div><button class="buy-btn" onclick="buyDirect('GULTŅI','Daļas','€29')">PIRKT</button></div><div class="card"><img src="ASSETS/parts/griptape.jpg" alt="GRIPTAPE"><h3>GRIPTAPE</h3><p>Saķeres pārklājums dēļa augšai.</p><div class="price">€19</div><button class="buy-btn" onclick="buyDirect('GRIPTAPE','Daļas','€19')">PIRKT</button></div><div class="card"><img src="ASSETS/parts/screws.jpg" alt="SKRŪVES"><h3>SKRŪVES</h3><p>Skrūvju komplekts trucku piestiprināšanai.</p><div class="price">€9</div><button class="buy-btn" onclick="buyDirect('SKRŪVES','Daļas','€9')">PIRKT</button></div></div></section>
-<footer>
-  <div class="footer-grid">
-    <div><h2>GLOBAL <span style="color:#d4af37">DECKS</span></h2><p>Premium skateboard dizaini un komplektējošās daļas.</p></div>
-    <div><h3>Navigācija</h3><p><a href="index.html">Sākums</a><br><a href="shop.html">Veikals</a><br><a href="parts.html">Daļas</a><br><a href="about.html">Par mani</a></p></div>
-    <div><h3>Kontakti</h3><p>WhatsApp: +371 29712885<br>E-mail: info@globaldecks.com</p></div>
-  </div>
-</footer>
-
-<script>
-const whatsappPhone="37129712885";
-function buyDirect(name, optionName, price){
-  const text=`Sveiki! Vēlos pasūtīt: ${name}. Variants: ${optionName}. Cena: ${price}.`;
-  window.open(`https://wa.me/${whatsappPhone}?text=${encodeURIComponent(text)}`,"_blank");
+body{
+  margin:0;
+  background:#050505;
+  color:white;
+  font-family:'Inter',Arial,sans-serif;
 }
-</script>
+:root{
+  --gold:#d4af37;
+  --gold-dark:#8f6b16;
+}
+h1,h2,h3,nav a,.btn,.buy-btn,.filters button,.lang,.option-select{
+  font-family:'Cinzel',serif;
+}
+
+header{
+  min-height:88px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:10px 6%;
+  background:rgba(0,0,0,.96);
+  border-bottom:1px solid rgba(212,175,55,.55);
+  position:sticky;
+  top:0;
+  z-index:100;
+  backdrop-filter:blur(10px);
+}
+.logo img{
+  height:66px;
+  width:auto;
+  display:block;
+  filter:drop-shadow(0 0 12px rgba(212,175,55,.35));
+}
+nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:22px;
+  flex-wrap:wrap;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+nav a:hover{color:var(--gold)}
+.lang{
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  color:black;
+  border:none;
+  padding:13px 18px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.hero{
+  min-height:82vh;
+  display:flex;
+  align-items:center;
+  padding:80px 9%;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.55),rgba(0,0,0,.96)),
+    url("ASSETS/branding/boardback.jpg");
+  background-size:cover;
+  background-position:center;
+  border-bottom:1px solid rgba(212,175,55,.55);
+}
+.hero-content{max-width:680px}
+.hero h1{
+  margin:0;
+  font-size:86px;
+  line-height:.9;
+  font-weight:900;
+  text-transform:uppercase;
+}
+.hero h1 span{
+  display:block;
+  color:var(--gold);
+  text-shadow:0 0 28px rgba(212,175,55,.65);
+}
+.hero h2{
+  letter-spacing:4px;
+  text-transform:uppercase;
+  margin:28px 0 16px;
+}
+.hero h2 span{color:var(--gold)}
+.hero p{
+  color:#ddd;
+  font-size:19px;
+  max-width:500px;
+  line-height:1.65;
+}
+.btn,.buy-btn{
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  color:black;
+  border:none;
+  font-weight:900;
+  cursor:pointer;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+.btn{
+  display:inline-block;
+  padding:15px 34px;
+  margin-top:18px;
+  box-shadow:0 0 25px rgba(212,175,55,.48);
+}
+.section-title{
+  text-align:center;
+  font-size:46px;
+  margin:70px 0 28px;
+  text-transform:uppercase;
+}
+.section-title span{color:var(--gold)}
+
+.featured,.shop-section{padding:30px 5% 75px;background:#060606}
+.featured-grid,.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:28px;
+}
+.feature-card,.card,.part-card,.tech-box,.contact-card{
+  background:linear-gradient(160deg,rgba(212,175,55,.12),rgba(0,0,0,.96));
+  border:1px solid rgba(212,175,55,.45);
+  box-shadow:0 0 24px rgba(212,175,55,.08);
+}
+.feature-card{
+  min-height:300px;
+  display:flex;
+  gap:18px;
+  align-items:center;
+  padding:18px;
+}
+.feature-card img{
+  width:50%;
+  height:235px;
+  object-fit:cover;
+  border-radius:12px;
+  cursor:pointer;
+}
+.feature-card h3,.card h3,.part-card h3{text-transform:uppercase}
+.feature-card p,.price{
+  color:var(--gold);
+  font-weight:900;
+}
+.benefits{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  border-top:1px solid rgba(212,175,55,.35);
+  border-bottom:1px solid rgba(212,175,55,.35);
+}
+.benefit{
+  text-align:center;
+  padding:46px 24px;
+  background:radial-gradient(circle at top,rgba(212,175,55,.14),transparent 45%),#050505;
+  border-right:1px solid rgba(212,175,55,.2);
+}
+.benefit h3{color:var(--gold)}
+.benefit p{color:#d6d6d6}
+.about,.tech,.custom-order,.parts-section,.contact-section{
+  padding:70px 7%;
+  text-align:center;
+}
+.about p,.tech>p,.custom-box p,.parts-intro{
+  max-width:960px;
+  margin:auto;
+  color:#ddd;
+  font-size:18px;
+  line-height:1.8;
+}
+.branding{padding:45px 5%}
+.branding-grid,.process-gallery,.tech-boxes,.parts-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
+}
+.branding-grid img,.process-gallery img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  border-radius:14px;
+  border:1px solid rgba(212,175,55,.55);
+  cursor:pointer;
+}
+.tech-box{
+  padding:26px;
+  border-radius:14px;
+}
+.tech-box h3{color:var(--gold)}
+.custom-order{
+  background:
+    linear-gradient(rgba(0,0,0,.86),rgba(0,0,0,.95)),
+    url("ASSETS/process/process2.jpg");
+  background-size:cover;
+  background-position:center;
+  border-top:1px solid rgba(212,175,55,.35);
+  border-bottom:1px solid rgba(212,175,55,.35);
+}
+.custom-box{
+  max-width:1000px;
+  margin:auto;
+  padding:38px;
+  border:1px solid rgba(212,175,55,.55);
+  background:rgba(0,0,0,.72);
+}
+.custom-design-area{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:28px;
+  margin-top:34px;
+  align-items:center;
+}
+.custom-deck-preview{
+  width:210px;
+  height:520px;
+  border-radius:105px;
+  border:2px solid rgba(212,175,55,.7);
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:#070707;
+}
+.custom-deck-preview img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:none;
+}
+.question-mark{
+  font-family:'Cinzel',serif;
+  color:var(--gold);
+  font-size:150px;
+}
+.custom-controls{text-align:left}
+.custom-controls strong{
+  color:var(--gold);
+  font-size:32px;
+  display:block;
+  margin:12px 0 18px;
+}
+.upload-label{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));
+  color:black;
+  font-weight:900;
+  padding:13px 22px;
+  cursor:pointer;
+  text-transform:uppercase;
+  font-family:'Cinzel',serif;
+}
+#customUpload{display:none}
+#customIdea{
+  width:100%;
+  min-height:130px;
+  margin:14px 0;
+  background:#070707;
+  color:white;
+  border:1px solid rgba(212,175,55,.6);
+  padding:14px;
+}
+.parts-section{
+  background:radial-gradient(circle at top,rgba(212,175,55,.11),transparent 45%),#050505;
+  border-top:1px solid rgba(212,175,55,.35);
+  border-bottom:1px solid rgba(212,175,55,.35);
+}
+.parts-grid{max-width:1300px;margin:35px auto 0}
+.part-card{padding:18px;text-align:center}
+.part-card img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  border-radius:12px;
+  background:#090909;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(212,175,55,.22);
+}
+.part-card p{
+  color:#cfcfcf;
+  font-size:14px;
+  min-height:58px;
+  line-height:1.45;
+}
+.price{font-size:24px;margin:14px 0}
+.buy-btn{
+  width:100%;
+  padding:12px 18px;
+}
+.filters{text-align:center;padding:10px 5% 28px}
+.filters button{
+  margin:6px;
+  padding:11px 18px;
+  background:#111;
+  color:white;
+  border:1px solid var(--gold);
+  cursor:pointer;
+}
+.filters button:hover{background:var(--gold);color:#000}
+.card{
+  padding:16px;
+  text-align:center;
+  transition:.25s;
+}
+.card:hover,.part-card:hover,.feature-card:hover{
+  transform:translateY(-4px);
+  border-color:var(--gold);
+  box-shadow:0 0 28px rgba(212,175,55,.36);
+}
+.card img{
+  width:100%;
+  height:185px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+}
+.product-note,.option-info{
+  color:#cfcfcf;
+  font-size:13px;
+  line-height:1.35;
+}
+.option-select{
+  width:100%;
+  padding:10px;
+  margin:10px 0;
+  background:#070707;
+  color:white;
+  border:1px solid rgba(212,175,55,.6);
+}
+.contact-section{
+  background:radial-gradient(circle at top,rgba(212,175,55,.12),transparent 42%),#030303;
+}
+.contact-wrap{
+  max-width:1150px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:28px;
+}
+.contact-card{
+  padding:30px;
+  text-align:left;
+}
+.contact-card h3{color:var(--gold)}
+.contact-row{
+  border-bottom:1px solid rgba(212,175,55,.18);
+  padding:14px 0;
+}
+.contact-row strong{display:block;color:var(--gold)}
+.contact-form input,.contact-form textarea{
+  width:100%;
+  margin:8px 0;
+  padding:14px;
+  background:#050505;
+  color:white;
+  border:1px solid rgba(212,175,55,.6);
+}
+.contact-form textarea{min-height:120px}
+.modal{
+  display:none;
+  position:fixed;
+  z-index:300;
+  inset:0;
+  background:rgba(0,0,0,.94);
+  align-items:center;
+  justify-content:center;
+}
+.modal img{
+  max-width:92%;
+  max-height:90%;
+  border:2px solid var(--gold);
+}
+.close{
+  position:absolute;
+  top:22px;
+  right:34px;
+  font-size:42px;
+  cursor:pointer;
+}
+footer{
+  padding:42px 7%;
+  border-top:1px solid rgba(212,175,55,.25);
+  background:#030303;
+  color:#bbb;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:24px;
+}
+footer h3{color:var(--gold)}
+
+@media(max-width:850px){
+  header{padding:14px 18px;flex-direction:column}
+  .logo img{height:58px}
+  nav{gap:13px}
+  nav a{font-size:13px}
+  .hero{min-height:72vh;padding:55px 7%}
+  .hero h1{font-size:54px}
+  .section-title{font-size:34px}
+  .feature-card{flex-direction:column}
+  .feature-card img{width:100%}
+  .custom-box{padding:24px}
+}
+
+.logo{text-decoration:none;display:block}
+.logo img{height:66px;width:auto;display:block;filter:drop-shadow(0 0 12px rgba(212,175,55,.35))}
+.about-page-box{max-width:1050px;margin:70px auto;padding:38px;border:1px solid rgba(212,175,55,.55);background:linear-gradient(160deg,rgba(212,175,55,.12),rgba(0,0,0,.96));box-shadow:0 0 28px rgba(212,175,55,.16)}
+.about-page-box p,.about-page-box li{color:#ddd;font-size:18px;line-height:1.75}
+.about-page-box strong{color:#d4af37}
+.about-page-box a{color:#d4af37}
+</style></head>
+<body>
+<header>
+  <a class="logo" href="index.html#home"><img src="ASSETS/logo/logo.jpg" onerror="this.src='ASSETS/logo/logo.png'" alt="Global Decks SS logo"></a>
+  <nav>
+    <a href="index.html#home" data-lv="Sākums" data-en="Home">Sākums</a>
+    <a href="index.html#featured" data-lv="Izvēlētie" data-en="Featured">Izvēlētie</a>
+    <a href="index.html#technology" data-lv="Tehnoloģija" data-en="Technology">Tehnoloģija</a>
+    <a href="index.html#custom" data-lv="Custom" data-en="Custom">Custom</a>
+    <a href="index.html#parts" data-lv="Daļas" data-en="Parts">Daļas</a>
+    <a href="index.html#shop" data-lv="Veikals" data-en="Shop">Veikals</a>
+    <a href="about.html" data-lv="Par mani" data-en="About me">Par mani</a>
+    <a href="index.html#contact" data-lv="Kontakti" data-en="Contact">Kontakti</a>
+  </nav>
+  <button class="lang" onclick="location.href='index.html#parts'">PARTS</button>
+</header>
+<section class="about-page-box">
+  <h1 class="section-title">Komplektējošās <span>daļas</span></h1>
+  <p>Šī lapa ir atsevišķa detaļu sadaļa projekta nosacījumiem. Pilnā detaļu kolekcija ar riteņiem, truckiem, gultņiem, griptape un skrūvēm ir galvenajā scroll lapā.</p>
+  <p><a class="btn" href="index.html#parts">Atvērt pilno daļu sadaļu</a></p>
+</section>
 </body></html>
