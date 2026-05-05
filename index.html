@@ -6,19 +6,33 @@
 <title>GLOBAL DECKS SS</title>
 
 <style>
-body { background:#000; color:#fff; font-family:Arial; }
+body { background:#000; color:#fff; font-family:Arial; margin:0; }
+nav { display:flex; justify-content:center; gap:20px; padding:15px; border-bottom:1px solid gold;}
+nav a { color:white; text-decoration:none; }
+.section { padding:40px 20px; text-align:center; }
 .grid { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
 .card { border:1px solid gold; padding:15px; width:220px; text-align:center; }
 .card img { width:100%; height:140px; object-fit:cover; }
 .price { color:gold; margin:10px 0; }
-button { background:gold; border:none; padding:10px; cursor:pointer; }
+button { background:gold; border:none; padding:10px; cursor:pointer; width:100%; }
 </style>
 </head>
 
 <body>
 
-<h1 style="text-align:center;">GLOBAL DECKS SS</h1>
+<nav>
+<a href="#home">SĀKUMS</a>
+<a href="#shop">VEIKALS</a>
+<a href="#parts">DAĻAS</a>
+</nav>
 
+<div class="section" id="home">
+<h1>GLOBAL DECKS SS</h1>
+<p>Brauc savā stilā</p>
+</div>
+
+<div class="section" id="shop">
+<h2>DĒĻI</h2>
 <div class="grid">
 
 <div class="card">
@@ -27,6 +41,13 @@ button { background:gold; border:none; padding:10px; cursor:pointer; }
 <div class="price">€189</div>
 <button>PIRKT</button>
 </div>
+
+</div>
+</div>
+
+<div class="section" id="parts">
+<h2>RITEŅI</h2>
+<div class="grid">
 
 <div class="card">
 <img src="ASSETS/parts/wheels1.jpg">
@@ -84,6 +105,7 @@ button { background:gold; border:none; padding:10px; cursor:pointer; }
 <button>PIRKT</button>
 </div>
 
+</div>
 </div>
 
 </body>
