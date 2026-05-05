@@ -428,6 +428,71 @@ function imgFallback(img, paths){
   img.src=paths[i];
 }
 </script>
+
+<style id="global-decks-ultra-polish">
+body{
+  background:
+    radial-gradient(circle at 20% 0%, rgba(212,175,55,.10), transparent 32%),
+    radial-gradient(circle at 80% 20%, rgba(130,58,255,.10), transparent 34%),
+    #050505 !important;
+}
+header{box-shadow:0 10px 35px rgba(0,0,0,.55)}
+nav a{position:relative}
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-7px;
+  width:0;
+  height:2px;
+  background:linear-gradient(90deg,#d4af37,#fff2a6);
+  transition:.25s;
+}
+nav a:hover::after{width:100%}
+.hero{position:relative;overflow:hidden}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 75% 35%, rgba(212,175,55,.16), transparent 30%),
+    linear-gradient(120deg, transparent 0%, rgba(255,255,255,.035) 45%, transparent 70%);
+  pointer-events:none;
+}
+.hero-content{position:relative;z-index:2}
+.hero h1{letter-spacing:2px}
+.btn,.buy-btn,.lang,.upload-label{transition:.25s}
+.btn:hover,.buy-btn:hover,.lang:hover,.upload-label:hover{
+  filter:brightness(1.16);
+  transform:translateY(-2px);
+  box-shadow:0 0 26px rgba(212,175,55,.55);
+}
+.card,.part-card,.feature-card,.tech-box,.contact-card{position:relative;overflow:hidden}
+.card::before,.part-card::before,.feature-card::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  background:linear-gradient(120deg, transparent 20%, rgba(255,255,255,.08) 45%, transparent 65%);
+  transform:translateX(-130%);
+  transition:.65s;
+  pointer-events:none;
+}
+.card:hover::before,.part-card:hover::before,.feature-card:hover::before{transform:translateX(130%)}
+.card img,.part-card img,.feature-card img,.branding-grid img,.process-gallery img{transition:.35s}
+.card:hover img,.part-card:hover img,.feature-card:hover img{transform:scale(1.045)}
+.section-title{text-shadow:0 0 24px rgba(212,175,55,.22)}
+.price{text-shadow:0 0 12px rgba(212,175,55,.45)}
+.filters button{border-radius:999px}
+.filters button:hover{box-shadow:0 0 18px rgba(212,175,55,.40)}
+@media(max-width:850px){
+  header{position:sticky;top:0}
+  nav{row-gap:10px}
+  .hero{min-height:68vh}
+  .card,.part-card{border-color:rgba(212,175,55,.58)}
+  .products,.parts-grid,.featured-grid{grid-template-columns:1fr}
+}
+</style>
+
 </head>
 
 <body>
